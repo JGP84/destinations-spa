@@ -1,0 +1,84 @@
+{
+  "destinations": [
+    {
+      "name": "France",
+      "capital": "Paris",
+      "country_code": "FR",
+      "id": "des_FR",
+      "description": "France is known for its art, fashion, culture, and cuisine.",
+      "src_img": "assets/img/destinations/des_FR.jpg"
+    },
+    {
+      "name": "Spain",
+      "capital": "Madrid",
+      "country_code": "ES",
+      "id": "des_ES",
+      "description": "Spain is famous for its vibrant cities, beautiful beaches, and rich history.",
+      "src_img": "assets/img/destinations/des_ES.jpg"
+    },
+    {
+      "name": "Italy",
+      "capital": "Rome",
+      "country_code": "IT",
+      "id": "des_IT",
+      "description": "Italy is renowned for its ancient ruins, stunning architecture, and delicious food.",
+      "src_img": "assets/img/destinations/des_IT.jpg"
+    },
+    {
+      "name": "Thailand",
+      "capital": "Bangkok",
+      "country_code": "TH",
+      "id": "des_TH",
+      "description": "Thailand is known for its tropical beaches, ornate temples, and vibrant street life.",
+      "src_img": "assets/img/destinations/des_TH.jpg"
+    },
+    {
+      "name": "Japan",
+      "capital": "Tokyo",
+      "country_code": "JP",
+      "id": "des_JP",
+      "description": "Japan is famous for its unique blend of traditional and modern culture, stunning landscapes, and advanced technology.",
+      "src_img": "assets/img/destinations/des_JP.jpg"
+    },
+    {
+      "name": "Greece",
+      "capital": "Athens",
+      "country_code": "GR",
+      "id": "des_GR",
+      "description": "Greece is renowned for its ancient history, beautiful islands, and Mediterranean cuisine.",
+      "src_img": "assets/img/destinations/des_GR.jpg"
+    },
+    {
+      "name": "Mexico",
+      "capital": "Mexico City",
+      "country_code": "MX",
+      "id": "des_MX",
+      "description": "Mexico is known for its rich cultural heritage, beautiful beaches, and delicious cuisine.",
+      "src_img": "assets/img/destinations/des_MX.jpg"
+    },
+    {
+      "name": "Australia",
+      "capital": "Canberra",
+      "country_code": "AU",
+      "id": "des_AU",
+      "description": "Australia is famous for its stunning natural landscapes, unique wildlife, and vibrant cities.",
+      "src_img": "assets/img/destinations/des_AU.jpg"
+    },
+    {
+      "name": "Egypt",
+      "capital": "Cairo",
+      "country_code": "EG",
+      "id": "des_EG",
+      "description": "Egypt is renowned for its ancient pyramids, iconic landmarks, and rich history.",
+      "src_img": "assets/img/destinations/des_EG.jpg"
+    },
+    {
+      "name": "Brazil",
+      "capital": "Brasília",
+      "country_code": "BR",
+      "id": "des_BR",
+      "description": "Brazil is known for its diverse culture, beautiful beaches, and the Amazon rainforest.",
+      "src_img": "assets/img/destinations/des_BR.jpg"
+    }
+  ]
+}
