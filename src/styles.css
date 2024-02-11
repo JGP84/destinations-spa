@@ -1,8 +1,10 @@
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
+  background-color: #303030;
+  color: white;
 }
 
 html,

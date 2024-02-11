@@ -1,1 +1,36 @@
-<p>search works!</p>,
+<div class="pad-1">
+  <h3>Search</h3>
+
+  <div class="flex-beetween">
+    <div class="flex">
+      <mat-form-field>
+        <mat-label>Search destinations</mat-label>
+        <input />
+
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let destination of destinations"
+            [value]="destination"
+          >
+            {{ destination.name }}
+          </mat-option>
+
+          <mat-option
+            *ngIf="
+              destinations.length === 0 &&
+              searchInput.value &&
+              searchInput.value.length > 0
+            "
+            value=""
+          >
+            I don't have any result
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <button mat-flat-button color="primary">Search</button>
+    </div>
+
+    <button mat-flat-button color="accent">New Destination</button>
+  </div>
+</div>

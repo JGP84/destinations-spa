@@ -1,0 +1,24 @@
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-beetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pad-1 {
+  padding: 1rem;
+}
+
+input {
+  height: 1.9rem;
+  width: 12rem;
+  margin-left: -1rem;
+}
+
+button {
+  margin-top: -0.3rem;
+}
