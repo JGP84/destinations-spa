@@ -11,6 +11,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatCommonModule } from '@angular/material/core';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   exports: [
     MatToolbarModule,
@@ -20,7 +25,11 @@ import {MatListModule} from '@angular/material/list';
     MatInputModule,
     MatAutocompleteModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatChipsModule,
+    MatDialogModule,
+    MatCommonModule
   ],
 })
 export class MaterialModule {}

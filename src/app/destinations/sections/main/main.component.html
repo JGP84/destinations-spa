@@ -1,19 +1,22 @@
 <div class="container-main">
-  <p>main works!</p>
+  <div
+    class="header"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <h1>List destinations</h1>
+    <button mat-flat-button color="accent">New Destination</button>
+  </div>
 
-  <!-- <h1>Listado de Héroes</h1>
   <mat-divider></mat-divider>
 
-  <div class="grid bm-8 pt-2">
-
-    <div *ngFor="let hero of heroes"
-      class="col-12 sm:col-4 md:col-3 xl:col-2">
-
+  <div class="grid">
+    <div
+      *ngFor="let destination of destinations"
+      class="col-12 sm:col-4 md:col-3 xl:col-2"
+    >
+      <destinations-card [destination]="destination"></destinations-card>
     </div>
-
   </div>
- -->
 
- <mat-divider [vertical]="true"></mat-divider>
+  <mat-divider [vertical]="true"></mat-divider>
 </div>
-

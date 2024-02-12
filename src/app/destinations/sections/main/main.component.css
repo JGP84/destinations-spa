@@ -1,5 +1,6 @@
 .container-main {
   width: 66vw;
   height: 100vw;
+  padding: 0rem 1rem;
   background-color: blue;
 }
