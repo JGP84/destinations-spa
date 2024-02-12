@@ -1,4 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DestinationService } from '../../services/destinations.service';
 
 @Component({
@@ -6,8 +7,9 @@ import { DestinationService } from '../../services/destinations.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
   destinations: any[];
+  private subscription!: Subscription;
 
   constructor(@Inject(DestinationService) private destinationService: DestinationService) {
     this.destinations = [];
@@ -17,6 +19,16 @@ export class MainComponent implements OnInit {
     await this.destinationService.fetchDestinations();
     this.destinations = this.destinationService.getDestinations();
 
-    console.log('destinations main', this.destinations);
+    this.subscription = this.destinationService.destinationsChanged.subscribe(
+      (destinations: any[]) => {
+        this.destinations = destinations;
+      }
+    );
+
+  
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

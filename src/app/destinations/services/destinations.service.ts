@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 export interface Destination {
   name: string;
@@ -16,6 +17,7 @@ export interface Destination {
 })
 export class DestinationService {
   private destinations: Destination[] = [];
+  destinationsChanged = new Subject<Destination[]>();
 
   constructor(private http: HttpClient) {}
 
@@ -33,6 +35,7 @@ export class DestinationService {
         .subscribe((destinations) => {
           console.log('destinations service', destinations);
           this.destinations = destinations;
+          this.destinationsChanged.next(this.destinations);
           resolve(destinations);
         });
     });
@@ -40,5 +43,10 @@ export class DestinationService {
 
   getDestinations(): Destination[] {
     return this.destinations;
+  }
+
+  deleteDestination(id: string): void {
+    this.destinations = this.destinations.filter(destination => destination.id !== id);
+    this.destinationsChanged.next(this.destinations);
   }
 }

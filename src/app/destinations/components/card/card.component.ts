@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Destination } from '../../services/destinations.service';
+import { Destination, DestinationService } from '../../services/destinations.service';
 
 @Component({
   selector: 'destinations-card',
@@ -9,7 +9,13 @@ import { Destination } from '../../services/destinations.service';
 export class CardComponent implements OnInit {
   @Input() destination!: Destination;
 
-  constructor() {}
+  constructor(private destinationService: DestinationService) {}
 
   ngOnInit() {}
+
+  deleteDestination(destination: Destination): void {
+   
+    this.destinationService.deleteDestination(destination.id);
+
+  }
 }
