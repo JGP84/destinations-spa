@@ -2,28 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-
-export interface Destination {
-  name: string;
-  capital: string;
-  country_code: string;
-  id: string;
-  description: string;
-  src_img: string;
-}
+import { Destin } from '../interfaces/destin.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DestinationService {
-  private destinations: Destination[] = [];
-  destinationsChanged = new Subject<Destination[]>();
+  private destinations: Destin[] = [];
+  destinationsChanged = new Subject<Destin[]>();
 
   constructor(private http: HttpClient) {}
 
-  fetchDestinations(): Promise<Destination[]> {
+  fetchDestinations(): Promise<Destin[]> {
     return new Promise((resolve, reject) => {
-      this.http.get<{destinations: Destination[]}>('/assets/mock/db.json')
+      this.http
+        .get<{ destinations: Destin[] }>('/assets/mock/db.json')
         .pipe(
           map((response) => response.destinations),
           catchError((error) => {
@@ -41,12 +34,14 @@ export class DestinationService {
     });
   }
 
-  getDestinations(): Destination[] {
+  getDestinations(): Destin[] {
     return this.destinations;
   }
 
   deleteDestination(id: string): void {
-    this.destinations = this.destinations.filter(destination => destination.id !== id);
+    this.destinations = this.destinations.filter(
+      (destination) => destination.id !== id
+    );
     this.destinationsChanged.next(this.destinations);
   }
 }
