@@ -3,19 +3,32 @@
     <mat-card-title>{{ destination.name | uppercase }}</mat-card-title>
     <mat-card-subtitle>{{ destination.country_code }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="destination.src_img" alt="Image of {{destination.name}}">
+  <img
+    mat-card-image
+    [src]="destination.src_img"
+    alt="Image of {{ destination.name }}"
+  />
   <mat-card-subtitle>{{ destination.capital }}</mat-card-subtitle>
   <mat-card-content>
     <p>{{ destination.description }}</p>
   </mat-card-content>
-  <mat-card-actions style="display: flex; justify-content: space-evenly;">
-
+  <mat-card-actions style="display: flex; justify-content: space-evenly">
     <mat-card-actions>
-      <button mat-icon-button aria-label="Delete" (click)="deleteDestination(destination)">
+      <button
+        mat-icon-button
+        aria-label="Delete"
+        (click)="deleteDestination(destination)"
+      >
         <mat-icon>delete</mat-icon>
       </button>
-      <button mat-button>VIEW DETAILS</button>
-      <button mat-icon-button aria-label="Edit">
+      <button mat-button (click)="goInfoDestination(destination)">
+        VIEW DETAILS
+      </button>
+      <button
+        mat-icon-button
+        aria-label="Edit"
+        (click)="goEditDestination(destination)"
+      >
         <mat-icon>edit</mat-icon>
       </button>
     </mat-card-actions>

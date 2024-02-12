@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DestinationService } from '../../services/destinations.service';
+
 
 @Component({
   selector: 'destinations-main',
@@ -11,7 +13,7 @@ export class MainComponent implements OnInit, OnDestroy {
   destinations: any[];
   private subscription!: Subscription;
 
-  constructor(@Inject(DestinationService) private destinationService: DestinationService) {
+  constructor(@Inject(DestinationService) private destinationService: DestinationService, private router: Router ) {
     this.destinations = [];
   }
 
@@ -25,7 +27,10 @@ export class MainComponent implements OnInit, OnDestroy {
       }
     );
 
-  
+  }
+
+  goNewDestination() {
+    this.router.navigate(['/new']);
   }
 
   ngOnDestroy() {
