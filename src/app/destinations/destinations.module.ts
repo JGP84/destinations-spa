@@ -8,6 +8,7 @@ import { SidebarComponent } from './sections/sidebar/sidebar.component';
 import { MaterialModule } from '../material/material.module';
 import { CardComponent } from './components/card/card.component';
 import { RouterModule } from '@angular/router';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     SearchComponent,
     MainComponent,
     SidebarComponent,
-    CardComponent
+    CardComponent,
+    TruncatePipe
   ],
 
   providers: [],

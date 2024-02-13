@@ -1,0 +1,14 @@
+.custom-card {
+  height: 22rem;
+  width: 11rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-content {
+  overflow-y: auto;
+}
+
+.mat-card-actions {
+  margin-top: auto;
+}
