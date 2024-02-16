@@ -9,12 +9,13 @@ import { MaterialModule } from '../material/material.module';
 import { CardComponent } from './components/card/card.component';
 import { RouterModule } from '@angular/router';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
 
 @NgModule({
-  imports: [CommonModule, MaterialModule, RouterModule],
+  imports: [CommonModule, MaterialModule, RouterModule, BrowserAnimationsModule],
   exports: [MaterialModule, NavbarComponent, SearchComponent, MainComponent, SidebarComponent, CardComponent],
 
   declarations: [

@@ -2,10 +2,10 @@
   <h3>Search</h3>
 
   <div class="flex-beetween">
-    <!-- <div class="flex">
+    <div class="flex">
       <mat-form-field>
         <mat-label>Search destinations</mat-label>
-        <input />
+        <input matInput #searchInput />
 
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
           <mat-option
@@ -28,11 +28,7 @@
         </mat-autocomplete>
       </mat-form-field>
 
-      <button mat-flat-button color="primary">Search</button>
+      <button mat-flat-button color="primary" (click)="search()">Search</button>
     </div>
-
-   
-  </div> -->
+  </div>
 </div>
-
-
