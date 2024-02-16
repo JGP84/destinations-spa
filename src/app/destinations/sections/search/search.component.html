@@ -5,30 +5,16 @@
     <div class="flex">
       <mat-form-field>
         <mat-label>Search destinations</mat-label>
-        <input matInput #searchInput />
+        <input matInput #searchInput (input)="search($event)" />
 
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option
-            *ngFor="let destination of destinations"
-            [value]="destination"
-          >
-            {{ destination.name }}
-          </mat-option>
+       <!--  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option> </mat-option>
 
-          <mat-option
-            *ngIf="
-              destinations.length === 0 &&
-              searchInput.value &&
-              searchInput.value.length > 0
-            "
-            value=""
-          >
-            I don't have any result
-          </mat-option>
-        </mat-autocomplete>
+          <mat-option> I don't have any result </mat-option>
+        </mat-autocomplete> -->
       </mat-form-field>
 
-      <button mat-flat-button color="primary" (click)="search()">Search</button>
+      <button mat-flat-button color="primary">Search</button>
     </div>
   </div>
 </div>

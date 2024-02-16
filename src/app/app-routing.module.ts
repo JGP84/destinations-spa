@@ -6,6 +6,7 @@ import { NewDestinComponent } from './destinations/pages/new-destin/new-destin.c
 import { EditDestinComponent } from './destinations/pages/edit-destin/edit-destin.component';
 
 const routes: Routes = [
+  { path: 'info', component: InfoDestinComponent },
   { path: 'info/:id', component: InfoDestinComponent },
   { path: 'new', component: NewDestinComponent },
   { path: 'edit/:id', component: EditDestinComponent },
