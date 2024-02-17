@@ -3,12 +3,32 @@
   width: 11rem;
   display: flex;
   flex-direction: column;
+  margin:auto;
 }
 
 .mat-card-content {
   overflow-y: auto;
 }
 
-.mat-card-actions {
+.mat-card-actions,
+.custom-card .card-actions {
   margin-top: auto;
+  display: flex;
+  justify-content: space-evenly;
 }
+
+.custom-card .card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.custom-card .card-subtitle-bottom {
+  padding-bottom: 0.4rem;
+}
+
+.custom-card .card-subtitle-top {
+  padding-top: 0.4rem;
+}
+

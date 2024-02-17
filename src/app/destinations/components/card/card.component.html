@@ -1,9 +1,11 @@
 <mat-card class="custom-card">
   <mat-card-header>
-    <mat-card-title>{{ destination.name | uppercase }}</mat-card-title>
-    <mat-card-subtitle style="padding-bottom: 0.4rem">{{
-      destination.country_code
-    }}</mat-card-subtitle>
+    <div class="card-title">
+      <mat-card-title> {{ destination.name | uppercase }} </mat-card-title>
+      <mat-card-subtitle class="card-subtitle-bottom">
+        {{ destination.country_code }}
+      </mat-card-subtitle>
+    </div>
   </mat-card-header>
   <img
     mat-card-image
@@ -11,12 +13,12 @@
     alt="Image of {{ destination.name }}"
   />
   <mat-card-content>
-    <mat-card-subtitle style="padding-top: 0.4rem">{{
-      destination.capital
-    }}</mat-card-subtitle>
+    <mat-card-subtitle class="card-subtitle-top">
+      {{ destination.capital }}
+    </mat-card-subtitle>
     <p>{{ destination.description | truncate : 40 }}</p>
   </mat-card-content>
-  <mat-card-actions style="display: flex; justify-content: space-evenly; margin-top: auto;">
+  <mat-card-actions class="card-actions">
     <button
       mat-icon-button
       aria-label="Delete"
