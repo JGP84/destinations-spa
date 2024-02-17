@@ -36,8 +36,9 @@ export class DestinationService {
 
 
   deleteDestination(id: string): void {
-
-
+    const updatedDestinations = this.destinationsCopy.filter(destination => destination.id !== id);
+    this.destinationsCopy = updatedDestinations;
+    this.destinations.next(updatedDestinations);
   }
 
   addDestination(newDestination: Destin): void {
