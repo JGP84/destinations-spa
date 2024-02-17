@@ -45,9 +45,9 @@ export class DestinationService {
   }
 
   searchDestinations(event: any): void {
-    const search = event.target.value;
-    const filteredDestinations = this.destinationsCopy.filter(({ name }) => {
-      return name.toLowerCase().includes(search.toLowerCase());
+    const search = event.target.value.toLowerCase();
+    const filteredDestinations = this.destinationsCopy.filter(({ name, id }) => {
+      return name.toLowerCase().includes(search) || id.toLowerCase().includes(search);
     });
     this.destinations.next(filteredDestinations);
   }

@@ -24,7 +24,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 - [X] Crear un servicio que guarde la información de los súper héroes.
 - [ X ] El servicio debe permitir consultar todos los súper héroes.
 - [ X ] El servicio debe permitir consultar un único súper héroe por id.
-- [  ] El servicio debe permitir consultar todos los súper héroes que contienen, en su nombre, el valor de un parámetro enviado en la petición.
+- [x] El servicio debe permitir consultar todos los súper héroes que contienen, en su nombre, el valor de un parámetro enviado en la petición.
 - [ X ] El servicio debe permitir modificar un súper héroe.
 - [x] El servicio debe permitir eliminar un súper héroe.
 - [ ] (Opcional) Test unitario del servicio.
