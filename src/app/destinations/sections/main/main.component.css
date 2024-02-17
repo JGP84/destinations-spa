@@ -1,6 +1,6 @@
 .container-main {
-  width: 66vw;
-  height: 100vw;
+  display: flex;
+  flex-direction: column;
   padding: 0rem 1rem;
   background-color: blue;
 }
