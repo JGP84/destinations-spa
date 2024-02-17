@@ -26,4 +26,10 @@ export class SearchComponent {
     console.log('searching for:', event.target.value);
     this.destinationService.searchDestinations(event);
   }
+
+  clearSearch() {
+    this.searchInput.nativeElement.value = '';
+    this.searchInput.nativeElement.dispatchEvent(new Event('input'));
+  }
+
 }

@@ -4,17 +4,13 @@
   <div class="flex-beetween">
     <div class="flex">
       <mat-form-field>
-        <mat-label>Search destinations</mat-label>
+        <mat-label>Spain...</mat-label>
         <input matInput #searchInput (input)="search($event)" />
-
-       <!--  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option> </mat-option>
-
-          <mat-option> I don't have any result </mat-option>
-        </mat-autocomplete> -->
       </mat-form-field>
 
-      <button mat-flat-button color="primary">Search</button>
+      <button mat-raised-button class="mx-3" color="primary" (click)="clearSearch()">
+        Clear
+      </button>
     </div>
   </div>
 </div>

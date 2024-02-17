@@ -53,7 +53,7 @@ export class DestinationService {
   searchDestinations(event: any): void {
     const search = event.target.value.toLowerCase();
 
-    const filteredDestinations = this.destinationsCopy.value.filter(
+    const filteredDestinations = this.destinations.filter(
       ({ name, id }: Destin) => {
         return (
           name.toLowerCase().includes(search) ||
