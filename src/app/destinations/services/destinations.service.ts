@@ -8,8 +8,11 @@ import { Destin } from '../interfaces/destin.interface';
   providedIn: 'root',
 })
 export class DestinationService {
-  private destinations: BehaviorSubject<Destin[]> = new BehaviorSubject<Destin[]>([]);
-  private destinationsCopy: Destin[] = [];
+  private destinations: Destin[] = [];
+
+  private destinationsCopy: BehaviorSubject<Destin[]> = new BehaviorSubject<
+    Destin[]
+  >([]);
 
   constructor(private http: HttpClient) {}
 
@@ -23,38 +26,44 @@ export class DestinationService {
           return of([]);
         }),
         tap((destinations) => {
-          this.destinations.next(destinations);
-          this.destinationsCopy = [...destinations];
+          this.destinations = [...destinations];
+          this.destinationsCopy.next(destinations);
         })
       );
   }
 
   getDestinations(): Observable<Destin[]> {
-    return this.destinations.asObservable();
+    return this.destinationsCopy.asObservable();
   }
 
-
+  resetDestinationsOriginal(): void {
+    this.destinationsCopy.next(this.destinations);
+  }
 
   deleteDestination(id: string): void {
-    const updatedDestinations = this.destinationsCopy.filter(destination => destination.id !== id);
-    this.destinationsCopy = updatedDestinations;
-    this.destinations.next(updatedDestinations);
+    const updatedDestinations = this.destinationsCopy.value.filter(
+      (destination: Destin) => destination.id !== id
+    );
+
+    this.destinationsCopy.next(updatedDestinations);
   }
 
-  addDestination(newDestination: Destin): void {
-
-  }
+  addDestination(newDestination: Destin): void {}
 
   searchDestinations(event: any): void {
     const search = event.target.value.toLowerCase();
-    const filteredDestinations = this.destinationsCopy.filter(({ name, id }) => {
-      return name.toLowerCase().includes(search) || id.toLowerCase().includes(search);
-    });
-    this.destinations.next(filteredDestinations);
+
+    const filteredDestinations = this.destinationsCopy.value.filter(
+      ({ name, id }: Destin) => {
+        return (
+          name.toLowerCase().includes(search) ||
+          id.toLowerCase().includes(search)
+        );
+      }
+    );
+
+    this.destinationsCopy.next(filteredDestinations);
   }
-
-
-
 
   /* updateDestination(updatedDestination: Destin): void {
 

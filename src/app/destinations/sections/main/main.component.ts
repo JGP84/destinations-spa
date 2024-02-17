@@ -20,4 +20,8 @@ export class MainComponent implements OnInit {
   goNewDestination() {
     /* this.router.navigate(['/new']); */
   }
+
+  reset() {
+    this.destinationService.resetDestinationsOriginal();
+  }
 }
