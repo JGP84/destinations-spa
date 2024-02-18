@@ -16,6 +16,7 @@ import { MatCommonModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 
+
 @NgModule({
   exports: [
     MatToolbarModule,
@@ -29,7 +30,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatChipsModule,
     MatDialogModule,
-    MatCommonModule
+    MatCommonModule,
+
   ],
 })
 export class MaterialModule {}

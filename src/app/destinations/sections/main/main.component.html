@@ -1,23 +1,15 @@
-<div class="container-main">
-  <div class="header">
-    <h2>Destinations</h2>
-    <button
-      mat-flat-button
-      color="accent"
-      class="center"
-      (click)="goNewDestination()"
-    >
-      New
-    </button>
-    <button mat-flat-button color="warn" (click)="reset()">Reset</button>
-  </div>
-
-  <div class="grid container-cards">
-    <div
-      *ngFor="let destination of destinations"
-      class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2"
-    >
-      <destinations-card [destination]="destination"></destinations-card>
-    </div>
-  </div>
+<div class="header">
+  <h2>Destinations</h2>
+  <button
+    mat-flat-button
+    color="accent"
+    class="center"
+    (click)="goNewDestination()"
+  >
+    New
+  </button>
+  <button mat-flat-button color="warn" (click)="reset()">Reset</button>
 </div>
+
+<router-outlet > </router-outlet>
+

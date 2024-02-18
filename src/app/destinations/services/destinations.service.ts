@@ -14,7 +14,9 @@ export class DestinationService {
     Destin[]
   >([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.fetchDestinations().subscribe();
+  }
 
   fetchDestinations(): Observable<Destin[]> {
     return this.http
@@ -48,7 +50,9 @@ export class DestinationService {
     this.destinationsCopy.next(updatedDestinations);
   }
 
-  addDestination(newDestination: Destin): void {}
+  addDestination(newDestination: Destin): void {
+    this.destinationsCopy.next([...this.destinationsCopy.value, newDestination]);
+  }
 
   searchDestinations(event: any): void {
     const search = event.target.value.toLowerCase();

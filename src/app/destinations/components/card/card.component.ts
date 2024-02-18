@@ -23,10 +23,10 @@ export class CardComponent implements OnInit {
   }
 
   goInfoDestination(destination: Destin) {
-    this.router.navigate(['/info', destination.id]);
+    this.router.navigate(['home/info/', destination.id]);
   }
 
   goEditDestination(destination: Destin) {
-    this.router.navigate(['/edit', destination.id]);
+    this.router.navigate(['home/edit/', destination.id]);
   }
 }

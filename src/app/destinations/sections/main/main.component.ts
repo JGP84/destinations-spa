@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
 import { Destin } from '../../interfaces/destin.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'destinations-main',
@@ -10,7 +11,8 @@ import { Destin } from '../../interfaces/destin.interface';
 export class MainComponent implements OnInit {
   public destinations: Destin[] = [];
 
-  constructor(private destinationService: DestinationService) {}
+
+  constructor(private destinationService: DestinationService, private router: Router) {}
 
   ngOnInit(): void {
     this.destinationService.fetchDestinations().subscribe();
@@ -18,7 +20,7 @@ export class MainComponent implements OnInit {
   }
 
   goNewDestination() {
-    /* this.router.navigate(['/new']); */
+    this.router.navigate(['home/new']);
   }
 
   reset() {

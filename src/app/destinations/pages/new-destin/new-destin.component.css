@@ -1,8 +1,29 @@
 .container-new {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(90, 10, 180);
+  padding: 20px;
+}
+
+.container-new p {
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.container-new form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.container-new mat-form-field {
+  margin-bottom: 15px;
+}
+
+.container-new button {
+  margin-top: 20px;
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DestinationService } from '../../services/destinations.service'; // Replace 'path/to/your-service' with the actual path to your service
+import { DestinationService } from '../../services/destinations.service';
 import { Destin } from '../../interfaces/destin.interface';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'new-destin',
@@ -8,26 +10,30 @@ import { Destin } from '../../interfaces/destin.interface';
   styleUrls: ['new-destin.component.css'],
 })
 export class NewDestinComponent implements OnInit {
-  constructor(private destinationService: DestinationService) {}
+  destinForm: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    capital: new FormControl(''),
+    country_code: new FormControl(''),
+    id: new FormControl(''),
+    description: new FormControl(''),
+    src_img: new FormControl(''),
+  });
+
+  constructor(private destinationService: DestinationService, private router: Router ) {}
 
   ngOnInit() {
 
   }
 
-  destinExample: Destin = {
-    name: 'example name',
-    capital: 'Example Destination',
-    country_code: 'Example Location',
-    id: 'sds',
-    description: 'Example Description',
-    src_img: '',
-  };
-
   addDestination() {
-    // Call the addDestination method from your service
-    this.destinationService.addDestination(this.destinExample);
+    const newDestin: Destin = this.destinForm.value;
+    
+    this.destinationService.addDestination(newDestin);
 
-    console.log('New destination added:', this.destinExample);
-    console.log('All destinations:', this.destinationService.getDestinations());
+    this.destinForm.reset();
+  }
+
+  goBack() {
+    this.router.navigate(['/']);
   }
 }

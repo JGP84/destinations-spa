@@ -1,0 +1,13 @@
+.container-main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  background-color: blueviolet;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: blue; */
+}

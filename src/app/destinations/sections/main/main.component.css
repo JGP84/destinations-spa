@@ -1,24 +1,11 @@
-.container-main {
-  display: flex;
-  flex-direction: column;
-  padding: 0rem 1rem;
-  background-color: blueviolet;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
   /* background-color: blue; */
   color: white;
   margin-bottom: 1rem;
-}
-
-.container-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* background-color: blue; */
 }
 
 .center {
