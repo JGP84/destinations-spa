@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
 import { Destin } from '../../interfaces/destin.interface';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'info-destin',
@@ -9,14 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['info-destin.component.css']
 })
 export class InfoDestinComponent implements OnInit {
-  constructor(private destinationService: DestinationService,
-    private router: Router ) {}
+  destination: Destin | undefined;
 
+  constructor(
+    private destinationService: DestinationService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-
-
-
-  ngOnInit() {}
+  ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.destination = this.destinationService.getDestinationById(id);
+    }
+  }
 
   goBack() {
     this.router.navigate(['/home']);

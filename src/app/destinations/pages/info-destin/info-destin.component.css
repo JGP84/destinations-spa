@@ -1,3 +1,23 @@
-:host {
-  display: block;
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+  background-color: #7B20A2
+}
+
+mat-card-content {
+  text-align: justify;
+  line-height: 1.6;
+}
+mat-card-title {
+  margin-bottom: 0.5em;
+}
+mat-card-subtitle {
+  margin-top: 1em;
 }

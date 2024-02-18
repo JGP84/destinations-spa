@@ -5,7 +5,7 @@
       "capital": "Paris",
       "country_code": "FR",
       "id": "des_FR",
-      "description": "France is known for its art, fashion, culture, and cuisine.",
+      "description": "France, located in Western Europe, is known for its art, fashion, culture, and cuisine. It's home to many world-renowned landmarks such as the Eiffel Tower, Louvre Museum, and Palace of Versailles.",
       "src_img": "assets/img/destinations/des_FR.jpg"
     },
     {
@@ -13,7 +13,7 @@
       "capital": "Madrid",
       "country_code": "ES",
       "id": "des_ES",
-      "description": "Spain is famous for its vibrant cities, beautiful beaches, and rich history.",
+      "description": "Spain, a country on Europe's Iberian Peninsula, is famous for its vibrant cities, beautiful beaches, and rich history. It's known for its diverse culture, Flamenco music and dance, bullfights and festivals.",
       "src_img": "assets/img/destinations/des_ES.jpg"
     },
     {
@@ -21,7 +21,7 @@
       "capital": "Rome",
       "country_code": "IT",
       "id": "des_IT",
-      "description": "Italy is renowned for its ancient ruins, stunning architecture, and delicious food.",
+      "description": "Italy, a European country with a long Mediterranean coastline, is renowned for its ancient ruins, stunning architecture, and delicious food. It's home to many UNESCO World Heritage Sites like Colosseum, Leaning Tower of Pisa, and the canals of Venice.",
       "src_img": "assets/img/destinations/des_IT.jpg"
     },
     {
@@ -29,7 +29,7 @@
       "capital": "Bangkok",
       "country_code": "TH",
       "id": "des_TH",
-      "description": "Thailand is known for its tropical beaches, ornate temples, and vibrant street life.",
+      "description": "Thailand, a Southeast Asian country, is known for its tropical beaches, ornate temples, and vibrant street life. It's a popular tourist destination with attractions like the Grand Palace, Ayutthaya Historical Park, and the beautiful islands of Phuket and Koh Samui.",
       "src_img": "assets/img/destinations/des_TH.jpg"
     },
     {
@@ -37,7 +37,7 @@
       "capital": "Tokyo",
       "country_code": "JP",
       "id": "des_JP",
-      "description": "Japan is famous for its unique blend of traditional and modern culture, stunning landscapes, and advanced technology.",
+      "description": "Japan, an island country in East Asia, is famous for its unique blend of traditional and modern culture, stunning landscapes, and advanced technology. It's known for its historical sites like Kyoto's ancient temples and Hiroshima Peace Memorial Park, as well as modern attractions like Tokyo Disneyland and Universal Studios Japan.",
       "src_img": "assets/img/destinations/des_JP.jpg"
     },
     {
@@ -45,7 +45,7 @@
       "capital": "Athens",
       "country_code": "GR",
       "id": "des_GR",
-      "description": "Greece is renowned for its ancient history, beautiful islands, and Mediterranean cuisine.",
+      "description": "Greece, a Southeastern European country, is renowned for its ancient history, beautiful islands, and Mediterranean cuisine. It's home to many famous archaeological sites like the Parthenon in Athens, the ancient city of Delphi, and the Palace of Knossos in Crete.",
       "src_img": "assets/img/destinations/des_GR.jpg"
     },
     {
@@ -53,7 +53,7 @@
       "capital": "Mexico City",
       "country_code": "MX",
       "id": "des_MX",
-      "description": "Mexico is known for its rich cultural heritage, beautiful beaches, and delicious cuisine.",
+      "description": "Mexico, a country in the southern part of North America, is known for its rich cultural heritage, beautiful beaches, and delicious cuisine. It's home to many famous landmarks like the Mayan ruins of Chichen Itza, the beaches of Cancun, and the bustling metropolis of Mexico City.",
       "src_img": "assets/img/destinations/des_MX.jpg"
     },
     {
@@ -61,7 +61,7 @@
       "capital": "Canberra",
       "country_code": "AU",
       "id": "des_AU",
-      "description": "Australia is famous for its stunning natural landscapes, unique wildlife, and vibrant cities.",
+      "description": "Australia, a country in the Southern Hemisphere, is famous for its stunning natural landscapes, unique wildlife, and vibrant cities. It's known for its iconic landmarks like the Sydney Opera House, Great Barrier Reef, and the vast Outback wilderness.",
       "src_img": "assets/img/destinations/des_AU.jpg"
     },
     {
@@ -69,7 +69,7 @@
       "capital": "Cairo",
       "country_code": "EG",
       "id": "des_EG",
-      "description": "Egypt is renowned for its ancient pyramids, iconic landmarks, and rich history.",
+      "description": "Egypt, a country linking northeast Africa with the Middle East, is renowned for its ancient pyramids, iconic landmarks, and rich history. It's home to many famous archaeological sites like the Pyramids of Giza, the Great Sphinx, and the temples of Luxor and Karnak.",
       "src_img": "assets/img/destinations/des_EG.jpg"
     },
     {
@@ -77,7 +77,7 @@
       "capital": "Brasília",
       "country_code": "BR",
       "id": "des_BR",
-      "description": "Brazil is known for its diverse culture, beautiful beaches, and the Amazon rainforest.",
+      "description": "Brazil, the largest country in South America, is known for its diverse culture, beautiful beaches, and the Amazon rainforest. It's famous for its annual Carnival festival, the Christ the Redeemer statue in Rio de Janeiro, and the Iguazu Falls.",
       "src_img": "assets/img/destinations/des_BR.jpg"
     }
   ]

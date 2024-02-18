@@ -1,5 +1,18 @@
-<p>info-destin works!</p>,
+<mat-card *ngIf="destination">
+  <mat-card-header>
+    <mat-card-title>{{ destination.name }}</mat-card-title>
 
-<button mat-flat-button color="accent" (click)="goBack()">
-  Go Back
-</button>
+  </mat-card-header>
+  <img mat-card-image [src]="destination.src_img" alt="Photo of {{ destination.name }}">
+
+  <mat-card-content>
+    <mat-card-subtitle>{{ destination.capital }} ({{ destination.country_code }})</mat-card-subtitle>
+    <p>{{ destination.description }}</p>
+  </mat-card-content>
+</mat-card>
+
+<div class="container">
+  <button mat-flat-button color="accent" (click)="goBack()">
+    Go Back
+  </button>
+</div>
