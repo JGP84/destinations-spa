@@ -44,6 +44,13 @@ export class EditDestinComponent implements OnInit {
     this.destinForm.reset();
   }
 
+
+  deleteDestination() {
+    const id = this.destinForm.value.id;
+    this.destinationService.deleteDestination(id);
+    this.destinForm.reset();
+  }
+
   goBack() {
     this.router.navigate(['/home']);
   }

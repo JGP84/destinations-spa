@@ -11,3 +11,16 @@
   justify-content: center;
   /* background-color: blue; */
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /* background-color: blue; */
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.center {
+  margin-right: 3.5rem;
+}

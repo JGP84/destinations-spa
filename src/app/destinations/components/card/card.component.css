@@ -1,36 +1,26 @@
-.custom-card {
+mat-card {
   height: 22rem;
   width: 13rem;
   display: flex;
   flex-direction: column;
-  margin:auto;
-  background-color: #7B20A2
-}
-
-.mat-card-content {
-  overflow-y: auto;
-
-}
-p {
-  line-height: 1.6;
-}
-
-.mat-card-actions,
-.custom-card .card-actions {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-evenly;
+  margin: auto;
+  background-color: #7b20a2;
 }
 
 mat-card-header {
   margin-bottom: 0.5rem;
 }
 
-.custom-card .card-subtitle-bottom {
-  padding-bottom: 0.4rem;
-}
-
-.custom-card .card-subtitle-top {
+mat-card-subtitle {
   padding-top: 0.4rem;
 }
 
+mat-card-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  line-height: 1.6;
+}

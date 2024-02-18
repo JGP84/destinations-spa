@@ -11,10 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class NewDestinComponent {
 
-  constructor(
-    private destinationService: DestinationService,
-    private router: Router
-    ) {}
+  constructor(private destinationService: DestinationService, private router: Router ) {}
 
   destinForm: FormGroup = new FormGroup({
     name: new FormControl(''),

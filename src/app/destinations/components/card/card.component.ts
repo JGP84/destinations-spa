@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { DestinationService } from '../../services/destinations.service';
 import { Destin } from '../../interfaces/destin.interface';
 
 @Component({
@@ -8,19 +7,10 @@ import { Destin } from '../../interfaces/destin.interface';
   templateUrl: 'card.component.html',
   styleUrls: ['card.component.css'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() destination!: Destin;
 
-  constructor(
-    private destinationService: DestinationService,
-    private router: Router
-  ) {}
-
-  ngOnInit() {}
-
-  deleteDestination(destination: Destin): void {
-    this.destinationService.deleteDestination(destination.id);
-  }
+  constructor( private router: Router ) {}
 
   goInfoDestination(destination: Destin) {
     this.router.navigate(['home/info/', destination.id]);

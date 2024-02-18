@@ -1,14 +1,13 @@
-.container-new {
+.container-edit {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: mintcream;
   padding: 20px;
 }
 
 h1 {
-  color: black;
+  color: mintcream;
   margin-bottom: 20px;
 }
 
@@ -17,15 +16,18 @@ form {
   flex-direction: column;
   width: 100%;
   max-width: 500px;
+
 }
 
 mat-form-field {
   margin-bottom: 15px;
+
 }
 mat-label {
   color: white;
+
 }
 
-button {
-  margin-top: 20px;
+.margin-button {
+  margin-top: 2rem;
 }
