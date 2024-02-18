@@ -1,6 +1,6 @@
 .custom-card {
   height: 22rem;
-  width: 11rem;
+  width: 13rem;
   display: flex;
   flex-direction: column;
   margin:auto;
@@ -9,6 +9,10 @@
 
 .mat-card-content {
   overflow-y: auto;
+
+}
+p {
+  line-height: 1.6;
 }
 
 .mat-card-actions,
@@ -18,11 +22,8 @@
   justify-content: space-evenly;
 }
 
-.custom-card .card-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  width: 100%;
+mat-card-header {
+  margin-bottom: 0.5rem;
 }
 
 .custom-card .card-subtitle-bottom {

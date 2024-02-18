@@ -1,11 +1,9 @@
 <mat-card class="custom-card">
   <mat-card-header>
-    <div class="card-title">
+
       <mat-card-title> {{ destination.name | uppercase }} </mat-card-title>
-      <mat-card-subtitle class="card-subtitle-bottom">
-        {{ destination.country_code }}
-      </mat-card-subtitle>
-    </div>
+
+    
   </mat-card-header>
   <img
     mat-card-image
@@ -14,7 +12,7 @@
   />
   <mat-card-content>
     <mat-card-subtitle class="card-subtitle-top">
-      {{ destination.capital }}
+      {{ destination.capital }} ({{ destination.country_code }})
     </mat-card-subtitle>
     <p>{{ destination.description | truncate : 40 }}</p>
   </mat-card-content>

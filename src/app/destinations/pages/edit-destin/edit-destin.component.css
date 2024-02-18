@@ -3,27 +3,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(90, 10, 180);
+  background-color: mintcream;
   padding: 20px;
 }
 
-.container-new p {
-  color: #fff;
-  font-size: 2em;
+h1 {
+  color: black;
   margin-bottom: 20px;
 }
 
-.container-new form {
+form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 500px;
 }
 
-.container-new mat-form-field {
+mat-form-field {
   margin-bottom: 15px;
 }
+mat-label {
+  color: white;
+}
 
-.container-new button {
+button {
   margin-top: 20px;
 }

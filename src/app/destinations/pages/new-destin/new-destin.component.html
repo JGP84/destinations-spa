@@ -1,25 +1,25 @@
 <div class="container-new">
-  <p>N E W</p>
+  <h1>New Destination</h1>
 
   <form [formGroup]="destinForm" (ngSubmit)="addDestination()">
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput formControlName="name">
+      <input matInput formControlName="name" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Capital</mat-label>
-      <input matInput formControlName="capital">
+      <input matInput formControlName="capital" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Country Code</mat-label>
-      <input matInput formControlName="country_code">
+      <input matInput formControlName="country_code" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>ID</mat-label>
-      <input matInput formControlName="id">
+      <input matInput formControlName="id" />
     </mat-form-field>
 
     <mat-form-field>
@@ -29,15 +29,11 @@
 
     <mat-form-field>
       <mat-label>Image Source</mat-label>
-      <input matInput formControlName="src_img">
+      <input matInput formControlName="src_img" />
     </mat-form-field>
 
-    <button mat-flat-button color="primary" type="submit">
-      Create New
-    </button>
+    <button mat-flat-button color="primary" type="submit">Create New</button>
   </form>
 
-  <button mat-flat-button color="accent" (click)="goBack()">
-    Go Back
-  </button>
+  <button mat-flat-button color="accent" (click)="goBack()">Go Back</button>
 </div>
