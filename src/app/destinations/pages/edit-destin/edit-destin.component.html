@@ -1,5 +1,43 @@
-<p>edit-destin works!</p>,
+<div class="container-new">
+  <p>E D I T</p>
 
-<button mat-flat-button color="accent" (click)="goBack()">
-  Go Back
-</button>
+  <form [formGroup]="destinForm" (ngSubmit)="updateDestination()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Capital</mat-label>
+      <input matInput formControlName="capital">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Country Code</mat-label>
+      <input matInput formControlName="country_code">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>ID</mat-label>
+      <input matInput formControlName="id">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Image Source</mat-label>
+      <input matInput formControlName="src_img">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit">
+      Update Destination
+    </button>
+  </form>
+
+  <button mat-flat-button color="accent" (click)="goBack()">
+    Go Back
+  </button>
+</div>

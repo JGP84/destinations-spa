@@ -38,6 +38,10 @@ export class DestinationService {
     return this.destinationsCopy.asObservable();
   }
 
+  getDestinationById(id: string): Destin | undefined {
+    return this.destinationsCopy.value.find(destination => destination.id === id);
+  }
+
   resetDestinationsOriginal(): void {
     this.destinationsCopy.next(this.destinations);
   }
@@ -69,7 +73,13 @@ export class DestinationService {
     this.destinationsCopy.next(filteredDestinations);
   }
 
-  /* updateDestination(updatedDestination: Destin): void {
+  updateDestination(updatedDestination: Destin): void {
+    const index = this.destinationsCopy.value.findIndex(destination => destination.id === updatedDestination.id);
 
-  } */
+    if (index !== -1) {
+      const updatedDestinations = [...this.destinationsCopy.value];
+      updatedDestinations[index] = updatedDestination;
+      this.destinationsCopy.next(updatedDestinations);
+    }
+  }
 }

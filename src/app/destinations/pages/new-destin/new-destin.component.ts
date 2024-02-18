@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
 import { Destin } from '../../interfaces/destin.interface';
 import { Router } from '@angular/router';
@@ -9,7 +9,13 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: 'new-destin.component.html',
   styleUrls: ['new-destin.component.css'],
 })
-export class NewDestinComponent implements OnInit {
+export class NewDestinComponent {
+
+  constructor(
+    private destinationService: DestinationService,
+    private router: Router
+    ) {}
+
   destinForm: FormGroup = new FormGroup({
     name: new FormControl(''),
     capital: new FormControl(''),
@@ -19,15 +25,9 @@ export class NewDestinComponent implements OnInit {
     src_img: new FormControl(''),
   });
 
-  constructor(private destinationService: DestinationService, private router: Router ) {}
-
-  ngOnInit() {
-
-  }
-
   addDestination() {
     const newDestin: Destin = this.destinForm.value;
-    
+
     this.destinationService.addDestination(newDestin);
 
     this.destinForm.reset();
@@ -36,4 +36,5 @@ export class NewDestinComponent implements OnInit {
   goBack() {
     this.router.navigate(['/']);
   }
+
 }
