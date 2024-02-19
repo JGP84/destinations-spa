@@ -8,10 +8,9 @@ import { DialogComponent } from '../../components/dialog/dialog.component';
 @Component({
   selector: 'app-home-destin',
   templateUrl: './home-destin.component.html',
-  styleUrls: ['./home-destin.component.css']
+  styleUrls: ['./home-destin.component.css'],
 })
 export class HomeDestinComponent implements OnInit {
-
   constructor(
     private destinationService: DestinationService,
     private router: Router,
@@ -21,7 +20,9 @@ export class HomeDestinComponent implements OnInit {
   public destinations: Destin[] = [];
 
   ngOnInit(): void {
-    this.destinationService.getDestinations().subscribe(destinations => this.destinations = destinations);
+    this.destinationService
+      .getDestinations()
+      .subscribe((destinations) => (this.destinations = destinations));
   }
 
   goNewDestination() {
@@ -30,10 +31,13 @@ export class HomeDestinComponent implements OnInit {
 
   reset() {
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: { message: 'This operation will retrieve the list of source destinations and any changes made will be lost. Do you wish to continue?' }
+      data: {
+        message: 'This action will retrieve the list of source destinations and any changes made will be lost. Do you wish to continue?',
+        labelButton: 'Reset',
+      },
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.destinationService.resetDestinationsOriginal();
       }

@@ -9,6 +9,7 @@ import { Destin } from '../interfaces/destin.interface';
 })
 export class DestinationService {
   private destinations: Destin[] = [];
+  private formState: Destin | null = null;
 
   private destinationsCopy: BehaviorSubject<Destin[]> = new BehaviorSubject<
     Destin[]
@@ -81,5 +82,13 @@ export class DestinationService {
       updatedDestinations[index] = updatedDestination;
       this.destinationsCopy.next(updatedDestinations);
     }
+  }
+
+  setFormState(state: Destin) {
+    this.formState = state;
+  }
+
+  getFormState(): Destin | null {
+    return this.formState;
   }
 }

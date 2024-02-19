@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
-import { Destin } from '../../interfaces/destin.interface';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../../components/dialog/dialog.component';
 
 @Component({
   selector: 'edit-destin',
@@ -10,13 +11,6 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['edit-destin.component.css'],
 })
 export class EditDestinComponent implements OnInit {
-
-  constructor(
-    private destinationService: DestinationService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
-
   destinForm: FormGroup = new FormGroup({
     name: new FormControl(''),
     capital: new FormControl(''),
@@ -26,33 +20,51 @@ export class EditDestinComponent implements OnInit {
     src_img: new FormControl(''),
   });
 
+  constructor(
+    private destinationService: DestinationService,
+    private router: Router,
+    private route: ActivatedRoute,
+    public dialog: MatDialog
+  ) {}
+
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       const destination = this.destinationService.getDestinationById(id);
-      if (destination) {
-        this.destinForm.setValue(destination);
-      }
+      this.destinForm.patchValue(destination || {});
     }
   }
 
   updateDestination() {
-    const newDestin: Destin = this.destinForm.value;
-
-    this.destinationService.updateDestination(newDestin);
-
+    this.destinationService.updateDestination(this.destinForm.value);
     this.destinForm.reset();
   }
 
-
   deleteDestination() {
+    const currentFormState = { ...this.destinForm.value };
+
     const id = this.destinForm.value.id;
-    this.destinationService.deleteDestination(id);
-    this.destinForm.reset();
+
+    const dialogRef = this.dialog.open(DialogComponent, {
+      disableClose: true,
+      data: {
+        message: `This action will delete the following destination: ${this.destinForm.value.name}. Do you wish to continue?`,
+        labelButton: 'Delete',
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this.destinationService.deleteDestination(id);
+        this.destinForm.reset();
+        this.router.navigate(['/home']);
+      } else {
+        this.destinForm.setValue(currentFormState);
+      }
+    });
   }
 
   goBack() {
     this.router.navigate(['/home']);
   }
-
 }

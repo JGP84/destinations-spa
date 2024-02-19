@@ -8,4 +8,5 @@ export interface Destin {
 }
 export interface DialogData {
   message: string;
+  labelButton: string;
 }
