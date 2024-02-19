@@ -1,10 +1,8 @@
 <ng-template #loading>
-
   <mat-spinner></mat-spinner>
-
 </ng-template>
 
-<div *ngIf="destinations; else loading" class="container-main">
+<div *ngIf="pageDestinations; else loading" class="container-main">
   <div class="header">
     <h2>Destinations</h2>
     <button
@@ -19,10 +17,11 @@
   </div>
   <div class="grid container-cards">
     <div
-      *ngFor="let destination of destinations"
+      *ngFor="let destination of pageDestinations"
       class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2"
     >
       <destinations-card [destination]="destination"></destinations-card>
     </div>
   </div>
+  <mat-paginator [length]="destinations?.length" [pageSize]="6" [pageSizeOptions]="[6, 12, 18, 24]" (page)="setPage($event)"></mat-paginator>
 </div>

@@ -33,9 +33,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 - [ X ] Crear un componente que utilice el servicio anterior.
 - [ X ] El componente debe mostrar una lista paginada de héroes con botones de añadir, editar y borrar.
 - [ X ] El componente debe mostrar un input para filtrar por el héroe seleccionado.
-- [ ] El componente debe generar un formulario vacío al pulsar el botón de añadir.
-- [ ] El componente debe generar un formulario con los datos del héroe seleccionado al pulsar el botón de edición.
-- [ ] El componente debe preguntar si se está seguro que se desea borrar el héroe y, al confirmarlo, lo borrarlo.
+- [x] El componente debe generar un formulario vacío al pulsar el botón de añadir.
+- [x ] El componente debe generar un formulario con los datos del héroe seleccionado al pulsar el botón de edición.
+- [ x] El componente debe preguntar si se está seguro que se desea borrar el héroe y, al confirmarlo, lo borrarlo.
 - [ ] (Opcional) Test unitario del componente.
 
 ## Puntos a tener en cuenta
@@ -47,7 +47,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 - [ X ] Utilizar Angular Material como apoyo visual.
 - [ X ] Rutas y navegación de la página.
 - [ ] Presentar la aplicación “Dockerizada”.
-- [ ] Interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
+- [x] Interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
 - [ X ] Directiva para que al crear o editar en la caja de texto del nombre del héroe, siempre se muestre en mayúscula.
 - [ X ] ¿Uso de mockserver para poder implementar las llamadas HTTP sin un backend?.
 - [ ] Comunicación entre componentes orientada a eventos.

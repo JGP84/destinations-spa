@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { delay } from 'rxjs/operators';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home-destin',
@@ -12,21 +13,35 @@ import { delay } from 'rxjs/operators';
   styleUrls: ['./home-destin.component.css'],
 })
 export class HomeDestinComponent implements OnInit {
+  public destinations: Destin[] | undefined;
+  public pageDestinations: Destin[] | undefined;
+
   constructor(
     private destinationService: DestinationService,
     private router: Router,
     public dialog: MatDialog
   ) {}
 
-  public destinations: Destin[] | undefined;
-
   ngOnInit(): void {
-    // We add a delay here to simulate a slower data load,
-    // which allows us to see the spinner in action.
     this.destinationService
       .getDestinations()
-      .pipe(delay(1000)) // Delay the data by 1 second
-      .subscribe((destinations) => (this.destinations = destinations));
+      .pipe(delay(1000))
+      .subscribe((destinations) => {
+        this.destinations = destinations;
+        const pageEvent: PageEvent = { pageIndex: 0, pageSize: 6, length: destinations.length };
+        this.setPage(pageEvent);
+      });
+  }
+
+  setPage(event: PageEvent) {
+    let startIndex = event.pageIndex * event.pageSize;
+    let endIndex = startIndex + event.pageSize;
+
+    if (this.destinations && endIndex > this.destinations.length) {
+       endIndex = this.destinations.length;
+    }
+
+    this.pageDestinations = this.destinations?.slice(startIndex, endIndex);
   }
 
   goNewDestination() {
