@@ -15,6 +15,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCommonModule } from '@angular/material/core';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatChipsModule,
     MatDialogModule,
     MatCommonModule,
-
+    MatGridListModule,
+    MatProgressSpinnerModule
   ],
 })
 export class MaterialModule {}

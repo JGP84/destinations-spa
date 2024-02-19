@@ -28,6 +28,7 @@ export class NewDestinComponent {
     this.destinationService.addDestination(newDestin);
 
     this.destinForm.reset();
+    this.router.navigate(['/']);
   }
 
   goBack() {

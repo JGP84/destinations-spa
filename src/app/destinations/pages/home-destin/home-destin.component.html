@@ -1,4 +1,10 @@
-<div class="container-main">
+<ng-template #loading>
+
+  <mat-spinner></mat-spinner>
+
+</ng-template>
+
+<div *ngIf="destinations; else loading" class="container-main">
   <div class="header">
     <h2>Destinations</h2>
     <button

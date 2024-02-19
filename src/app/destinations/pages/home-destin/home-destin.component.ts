@@ -4,6 +4,7 @@ import { Destin } from '../../interfaces/destin.interface';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-destin',
@@ -17,11 +18,14 @@ export class HomeDestinComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
-  public destinations: Destin[] = [];
+  public destinations: Destin[] | undefined;
 
   ngOnInit(): void {
+    // We add a delay here to simulate a slower data load,
+    // which allows us to see the spinner in action.
     this.destinationService
       .getDestinations()
+      .pipe(delay(1000)) // Delay the data by 1 second
       .subscribe((destinations) => (this.destinations = destinations));
   }
 
