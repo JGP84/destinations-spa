@@ -6,3 +6,6 @@ export interface Destin {
   description: string;
   src_img: string;
 }
+export interface DialogData {
+  message: string;
+}

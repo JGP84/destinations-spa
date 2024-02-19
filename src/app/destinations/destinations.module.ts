@@ -13,6 +13,7 @@ import { HomeDestinComponent } from './pages/home-destin/home-destin.component';
 import { NewDestinComponent } from './pages/new-destin/new-destin.component'; // Asegúrate de que esta ruta de importación es correcta
 import { InfoDestinComponent } from './pages/info-destin/info-destin.component';
 import { EditDestinComponent } from './pages/edit-destin/edit-destin.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { EditDestinComponent } from './pages/edit-destin/edit-destin.component';
     HomeDestinComponent,
     NewDestinComponent,
     InfoDestinComponent,
-    EditDestinComponent
+    EditDestinComponent,
+    DialogComponent
   ],
 
   providers: [],
