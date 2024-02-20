@@ -11,9 +11,9 @@ export class DestinationService {
   private destinations: Destin[] = [];
   private formState: Destin | null = null;
 
-  private destinationsCopy: BehaviorSubject<Destin[]> = new BehaviorSubject<
-    Destin[]
-  >([]);
+
+
+  private destinationsCopy = new BehaviorSubject<Destin[]>([]);
 
   constructor(private http: HttpClient) {
     this.fetchDestinations().subscribe();
@@ -23,7 +23,7 @@ export class DestinationService {
     return this.http
       .get<{ destinations: Destin[] }>('/assets/mock/db.json')
       .pipe(
-        map((response) => response.destinations),
+        map((response) => response.destinations || []), // Ensure response.destinations is always an array
         catchError((error) => {
           console.error('Error fetching destinations:', error);
           return of([]);
@@ -35,9 +35,12 @@ export class DestinationService {
       );
   }
 
+
+
   getDestinations(): Observable<Destin[]> {
     return this.destinationsCopy.asObservable();
   }
+
 
   getDestinationById(id: string): Destin | undefined {
     return this.destinationsCopy.value.find(destination => destination.id === id);
