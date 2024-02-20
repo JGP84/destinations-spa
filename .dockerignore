@@ -1,0 +1,32 @@
+# Ignore node modules
+node_modules
+
+# Ignore Angular build output
+dist
+
+# Ignore Dockerfile
+Dockerfile
+
+# Ignore docker compose files
+docker-compose.yml
+docker-compose.*.yml
+
+# Ignore Git related files
+.git
+.gitignore
+
+# Ignore VSCode settings
+.vscode
+
+# Ignore npm debug logs
+npm-debug.log*
+
+# Ignore all log files
+*.log
+
+# Ignore all .env files
+*.env
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
