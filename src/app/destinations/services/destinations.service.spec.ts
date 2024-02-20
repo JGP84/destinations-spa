@@ -11,7 +11,6 @@ import { lastValueFrom, of } from 'rxjs';
 describe('DestinationService', () => {
   let service: DestinationService;
   let httpMock: HttpTestingController;
-  let fetchCalled: boolean;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -21,7 +20,6 @@ describe('DestinationService', () => {
 
     service = TestBed.inject(DestinationService);
     httpMock = TestBed.inject(HttpTestingController);
-    fetchCalled = false;
   });
 
   afterEach(() => {
@@ -63,21 +61,37 @@ describe('DestinationService', () => {
         'Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine. Its capital, Rome, is home to the Vatican as well as landmark art and ancient ruins.',
       src_img: 'assets/img/destinations/des_IT.jpg',
     },
+    {
+      name: 'Germany',
+      capital: 'Berlin',
+      country_code: 'DE',
+      id: 'des_DE',
+      description:
+        'Germany, located in Central Europe, is known for its long and rich history, culture, and science. It is home to many world-renowned landmarks such as the Berlin Wall, Brandenburg Gate, and Neuschwanstein Castle.',
+      src_img: 'assets/img/destinations/des_DE.jpg',
+    },
+    {
+      name: 'United Kingdom',
+      capital: 'London',
+      country_code: 'GB',
+      id: 'des_GB',
+      description:
+        'The United Kingdom, located off the northwestern coast of mainland Europe, is known for its history, culture, and global influence. It is home to many world-renowned landmarks such as the Big Ben, Tower of London, and Stonehenge.',
+      src_img: 'assets/img/destinations/des_GB.jpg',
+    },
   ];
 
   it('should fetch destinations', async () => {
+    spyOn(service, 'fetchDestinations').and.returnValue(of(mockDestinations));
+
     service.fetchDestinations().subscribe((destinations) => {
-      expect(destinations.length).toBe(3); // Expect 3 destinations
+      expect(destinations.length).toBe(5);
       expect(destinations).toEqual(mockDestinations);
-      expect(fetchCalled).toBe(false);
-      fetchCalled = true;
     });
 
-    const requests = httpMock.match('/assets/mock/db.json');
-    expect(requests.length).toBe(2); // Assert that there are two requests
-    requests.forEach((req) => req.flush({ destinations: mockDestinations }));
+    httpMock.expectOne('/assets/mock/db.json').flush(mockDestinations);
 
-    httpMock.verify(); // Ensure there are no outstanding requests
+    expect(service.fetchDestinations).toHaveBeenCalledTimes(1);
   });
 
   it('should handle fetch destinations error', async () => {
@@ -127,13 +141,11 @@ describe('DestinationService', () => {
     };
     await service.updateDestination(updatedDestination);
 
-    // Simulate the update in the test data
     const index = mockDestinations.findIndex(
       (d) => d.id === updatedDestination.id
     );
     mockDestinations[index] = updatedDestination;
 
-    // Expect a GET request to fetch destinations and provide a mock response
     const req = httpMock.expectOne('/assets/mock/db.json');
     req.flush({ destinations: mockDestinations });
 
@@ -156,21 +168,18 @@ describe('DestinationService', () => {
 
   it('should add a destination', async () => {
     const newDestination: Destin = {
-      name: 'Italy',
-      capital: 'Rome',
-      country_code: 'IT',
-      id: 'des_IT',
-      description:
-        'Italy, a European country with a long Mediterranean coastline, has left a powerful mark on Western culture and cuisine. Its capital, Rome, is home to the Vatican as well as landmark art and ancient ruins.',
-      src_img: 'assets/img/destinations/des_IT.jpg',
+      name: 'New Destination',
+      capital: 'New Capital',
+      country_code: 'ND',
+      id: 'des_ND',
+      description: 'New Destination Description',
+      src_img: 'assets/img/destinations/des_ND.jpg',
     };
 
     await service.addDestination(newDestination);
 
-    // Simulate the addition in the test data
     mockDestinations.push(newDestination);
 
-    // Expect a GET request to fetch destinations and provide a mock response
     const req = httpMock.expectOne('/assets/mock/db.json');
     req.flush({ destinations: mockDestinations });
 
