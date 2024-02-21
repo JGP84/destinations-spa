@@ -42,8 +42,10 @@
 ## Se valorará positivamente
   - La construcción del modelo de datos.
 
-## EXTRAS
-  - Incorporación del local storage para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
+## EXTRAS (no demandado en los requerimientos)
+  - Se ha incorporado el local storage para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
+
+  
 
 # DestinationsSpa
 

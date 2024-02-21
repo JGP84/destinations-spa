@@ -18,7 +18,7 @@ mat-card-subtitle {
 mat-card-actions {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 p {
