@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
-import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'edit-destin',
@@ -31,8 +30,9 @@ export class EditDestinComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      const destination = this.destinationService.getDestinationById(id);
-      this.destinForm.patchValue(destination || {});
+      this.destinForm.patchValue(
+        this.destinationService.getDestinationById(id) || {}
+      );
     }
   }
 
@@ -42,29 +42,20 @@ export class EditDestinComponent implements OnInit {
   }
 
   deleteDestination() {
-    const currentFormState = { ...this.destinForm.value };
-
     const id = this.destinForm.value.id;
 
     const dialogRef = this.dialog.open(DialogComponent, {
-      disableClose: true,
       data: {
         message: `This action will delete the following destination: ${this.destinForm.value.name}. Do you wish to continue?`,
         labelButton: 'Delete',
       },
     });
 
-    dialogRef.afterClosed().pipe(first()).subscribe((result) => {
-      if (result === undefined) {
-        return; // If dialog was closed immediately, do nothing
-      }
-
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.destinationService.deleteDestination(id);
         this.destinForm.reset();
         this.router.navigate(['/home']);
-      } else {
-        this.destinForm.setValue(currentFormState);
       }
     });
   }
