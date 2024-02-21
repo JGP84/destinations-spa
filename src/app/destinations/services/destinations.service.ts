@@ -59,7 +59,7 @@ export class DestinationService {
   }
 
   addDestination(newDestination: Destin): void {
-    this.destinationsCopy.next([...this.destinationsCopy.value, newDestination]);
+    this.destinationsCopy.next([newDestination, ...this.destinationsCopy.value]);
   }
 
   searchDestinations(event: any): void {

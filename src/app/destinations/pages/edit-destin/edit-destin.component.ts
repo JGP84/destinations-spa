@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'edit-destin',
@@ -53,7 +54,11 @@ export class EditDestinComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().pipe(first()).subscribe((result) => {
+      if (result === undefined) {
+        return; // If dialog was closed immediately, do nothing
+      }
+
       if (result) {
         this.destinationService.deleteDestination(id);
         this.destinForm.reset();
