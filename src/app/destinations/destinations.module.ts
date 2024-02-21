@@ -14,6 +14,7 @@ import { NewDestinComponent } from './pages/new-destin/new-destin.component'; //
 import { InfoDestinComponent } from './pages/info-destin/info-destin.component';
 import { EditDestinComponent } from './pages/edit-destin/edit-destin.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { UppercaseDirective } from '../directives/forceUppercase.directive';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     NewDestinComponent,
     InfoDestinComponent,
     EditDestinComponent,
-    DialogComponent
+    DialogComponent,
+    UppercaseDirective
   ],
 
   providers: [],

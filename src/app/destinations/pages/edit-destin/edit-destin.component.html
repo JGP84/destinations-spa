@@ -4,7 +4,7 @@
   <form [formGroup]="destinForm" (ngSubmit)="updateDestination()">
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput formControlName="name" />
+      <input matInput appForceUppercase formControlName="name" />
     </mat-form-field>
 
     <mat-form-field>

@@ -8,10 +8,8 @@ import { Destin } from '../interfaces/destin.interface';
   providedIn: 'root',
 })
 export class DestinationService {
+  
   private destinations: Destin[] = [];
-  private formState: Destin | null = null;
-
-
 
   private destinationsCopy = new BehaviorSubject<Destin[]>([]);
 
@@ -87,11 +85,5 @@ export class DestinationService {
     }
   }
 
-  setFormState(state: Destin) {
-    this.formState = state;
-  }
 
-  getFormState(): Destin | null {
-    return this.formState;
-  }
 }

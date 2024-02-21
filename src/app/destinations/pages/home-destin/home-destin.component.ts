@@ -28,7 +28,7 @@ export class HomeDestinComponent implements OnInit {
       .pipe(delay(1000))
       .subscribe((destinations) => {
         this.destinations = destinations;
-        const pageEvent: PageEvent = { pageIndex: 0, pageSize: 6, length: destinations.length };
+        const pageEvent: PageEvent = { pageIndex: 0, pageSize: 8, length: destinations.length };
         this.setPage(pageEvent);
       });
   }
