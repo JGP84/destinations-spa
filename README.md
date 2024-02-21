@@ -44,10 +44,11 @@
 
 ## EXTRAS (no demandado en los requerimientos)
   - Se ha incorporado el local storage para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
+  -Creación de un pipe personalizado para truncar el número de caracteres que mostrará la tarjeta en la descripción.
 
-  
 
-# DestinationsSpa
+
+# Destinations Spa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
