@@ -1,7 +1,7 @@
 
 # Prueba técnica de angular
 
-**Se ha decidido que la información que se consuma sea sobre destinos turísticos en lugar de héroes, para que esté más alineada con la empresa a la que postulo.**
+**Se ha decidido que la información que se consuma sea sobre destinos turísticos en lugar de héroes, para que esté más alineada con la empresa postulada.**
 
 # Checklist de Requerimientos
 
@@ -36,11 +36,11 @@
 - [x] Presentar la aplicación “Dockerizada”.
 - [x] Interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
 - [x] Directiva para que al crear o editar en la caja de texto del nombre del héroe, siempre se muestre en mayúscula.
-- [x] ¿Uso de mockserver para poder implementar las llamadas HTTP sin un backend?.
+- [x] Uso de mockserver para poder implementar las llamadas HTTP sin un backend.
 - [x] Comunicación entre componentes orientada a eventos.
 
 ## Se valorará positivamente
-- [x] Cómo se construye el modelo de datos
+  - La construcción del modelo de datos.
 
 
 # DestinationsSpa
@@ -59,3 +59,25 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Ejecutando la aplicación con Docker
+
+Para ejecutar esta aplicación con Docker, sigue estos pasos:
+
+1. **Construye la imagen de Docker**. En la raíz del proyecto, ejecuta el siguiente comando:
+
+\`\`\`bash
+docker build -t nombre-de-tu-imagen .
+\`\`\`
+
+Este comando construirá una imagen de Docker para tu aplicación utilizando el archivo `Dockerfile` en la raíz del proyecto. Puedes reemplazar `nombre-de-tu-imagen` con el nombre que quieras darle a tu imagen.
+
+2. **Ejecuta el contenedor de Docker**. Una vez que la imagen se haya construido, puedes ejecutarla con el siguiente comando:
+
+\`\`\`bash
+docker run -p 80:80 nombre-de-tu-imagen
+\`\`\`
+
+Este comando ejecutará un contenedor de Docker basado en tu imagen. La opción `-p 80:80` mapea el puerto 80 del contenedor al puerto 80 de tu máquina local.
+
+Ahora deberías poder acceder a tu aplicación en `http://localhost`.
