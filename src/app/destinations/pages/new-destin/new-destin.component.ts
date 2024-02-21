@@ -10,8 +10,10 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['new-destin.component.css'],
 })
 export class NewDestinComponent {
-
-  constructor(private destinationService: DestinationService, private router: Router ) {}
+  constructor(
+    private destinationService: DestinationService,
+    private router: Router
+  ) {}
 
   destinForm: FormGroup = new FormGroup({
     name: new FormControl(''),
@@ -22,17 +24,28 @@ export class NewDestinComponent {
     src_img: new FormControl(''),
   });
 
+  ngOnInit() {
+    const savedFormData = localStorage.getItem('newDestinForm');
+    if (savedFormData) {
+      this.destinForm.setValue(JSON.parse(savedFormData));
+    }
+
+    this.destinForm.valueChanges.subscribe((formData) => {
+      localStorage.setItem('newDestinForm', JSON.stringify(formData));
+    });
+  }
+
   addDestination() {
     const newDestin: Destin = this.destinForm.value;
 
     this.destinationService.addDestination(newDestin);
 
     this.destinForm.reset();
+    localStorage.removeItem('newDestinForm'); 
     this.router.navigate(['/']);
   }
 
   goBack() {
     this.router.navigate(['/']);
   }
-
 }

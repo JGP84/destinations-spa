@@ -42,6 +42,8 @@
 ## Se valorará positivamente
   - La construcción del modelo de datos.
 
+## EXTRAS
+  - Incorporación del local storage para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
 
 # DestinationsSpa
 

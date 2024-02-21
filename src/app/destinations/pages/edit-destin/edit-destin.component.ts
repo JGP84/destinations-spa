@@ -34,10 +34,20 @@ export class EditDestinComponent implements OnInit {
         this.destinationService.getDestinationById(id) || {}
       );
     }
+
+    const savedFormData = localStorage.getItem('destinForm');
+    if (savedFormData) {
+      this.destinForm.setValue(JSON.parse(savedFormData));
+    }
+
+    this.destinForm.valueChanges.subscribe((formData) => {
+      localStorage.setItem('destinForm', JSON.stringify(formData));
+    });
   }
 
   updateDestination() {
     this.destinationService.updateDestination(this.destinForm.value);
+    localStorage.removeItem('destinForm');
     this.goBack();
   }
 
@@ -55,6 +65,7 @@ export class EditDestinComponent implements OnInit {
       if (result) {
         this.destinationService.deleteDestination(id);
         this.destinForm.reset();
+        localStorage.removeItem('destinForm');
         this.goBack();
       }
     });
