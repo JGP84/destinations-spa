@@ -8,10 +8,11 @@ import { Destin } from '../interfaces/destin.interface';
   providedIn: 'root',
 })
 export class DestinationService {
-  
-  private destinations: Destin[] = [];
+  private originDestinations: Destin[] = [];
 
-  private destinationsCopy = new BehaviorSubject<Destin[]>([]);
+  private destinations = new BehaviorSubject<Destin[]>([]);
+
+  private searchDestinations: Destin[] = [];
 
   constructor(private http: HttpClient) {
     this.fetchDestinations().subscribe();
@@ -27,63 +28,84 @@ export class DestinationService {
           return of([]);
         }),
         tap((destinations) => {
-          this.destinations = [...destinations];
-          this.destinationsCopy.next(destinations);
+          this.originDestinations = [...destinations];
+          this.destinations.next(destinations);
+          this.searchDestinations = [...destinations];
         })
       );
   }
 
-
-
   getDestinations(): Observable<Destin[]> {
-    return this.destinationsCopy.asObservable();
+    return this.destinations.asObservable();
   }
 
-
   getDestinationById(id: string): Destin | undefined {
-    return this.destinationsCopy.value.find(destination => destination.id === id);
+    return this.destinations.value.find(
+      (destination) => destination.id === id
+    );
   }
 
   resetDestinationsOriginal(): void {
-    this.destinationsCopy.next(this.destinations);
+    this.destinations.next(this.originDestinations);
+    this.searchDestinations = [...this.originDestinations];
   }
 
   deleteDestination(id: string): void {
-    const updatedDestinations = this.destinationsCopy.value.filter(
+    const updatedDestinations = this.destinations.value.filter(
       (destination: Destin) => destination.id !== id
     );
 
-    this.destinationsCopy.next(updatedDestinations);
+    this.destinations.next(updatedDestinations);
+
+    const updatedSearchDestinations = this.searchDestinations.filter(
+      (destination: Destin) => destination.id !== id
+    );
+
+    this.searchDestinations = updatedSearchDestinations;
   }
 
   addDestination(newDestination: Destin): void {
-    this.destinationsCopy.next([newDestination, ...this.destinationsCopy.value]);
+    this.destinations.next([
+      newDestination,
+      ...this.destinations.value,
+    ]);
+
+    this.searchDestinations = [newDestination, ...this.searchDestinations];
   }
 
-  searchDestinations(event: any): void {
-    const search = event.target.value.toLowerCase();
+  searchDestination(event: any): void {
+    const inputSearch = event.target.value.toLowerCase();
 
-    const filteredDestinations = this.destinations.filter(
+    const filteredDestinations = this.searchDestinations.filter(
       ({ name, id }: Destin) => {
         return (
-          name.toLowerCase().includes(search) ||
-          id.toLowerCase().includes(search)
+          name.toLowerCase().includes(inputSearch) ||
+          id.toLowerCase().includes(inputSearch)
         );
       }
     );
 
-    this.destinationsCopy.next(filteredDestinations);
+    this.destinations.next(filteredDestinations);
   }
 
   updateDestination(updatedDestination: Destin): void {
-    const index = this.destinationsCopy.value.findIndex(destination => destination.id === updatedDestination.id);
+    const indexDestinations = this.destinations.value.findIndex(
+      (destination) => destination.id === updatedDestination.id
+    );
+    const indexSearch = this.searchDestinations.findIndex(
+      (destination) => destination.id === updatedDestination.id
+    );
 
-    if (index !== -1) {
-      const updatedDestinations = [...this.destinationsCopy.value];
-      updatedDestinations[index] = updatedDestination;
-      this.destinationsCopy.next(updatedDestinations);
+    if (indexDestinations !== -1) {
+      const updatedDestinations = [...this.destinations.value];
+      updatedDestinations[indexDestinations] = updatedDestination;
+      this.destinations.next(updatedDestinations);
+    }
+
+    if (indexSearch !== -1) {
+      const updatedSearchDestinations = [...this.searchDestinations];
+      updatedSearchDestinations[indexSearch] = updatedDestination;
+      this.searchDestinations = updatedSearchDestinations;
     }
   }
-
-
 }

@@ -1,14 +1,6 @@
-import {
-  Component,
-  Inject,
-  OnInit,
-  OnDestroy,
-  ViewChild,
-  ElementRef,
-} from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
+
 import { DestinationService } from '../../services/destinations.service';
-import { Destin } from '../../interfaces/destin.interface';
 
 @Component({
   selector: 'destinations-search',
@@ -24,12 +16,11 @@ export class SearchComponent {
 
   search(event: any) {
     console.log('searching for:', event.target.value);
-    this.destinationService.searchDestinations(event);
+    this.destinationService.searchDestination(event);
   }
 
   clearSearch() {
     this.searchInput.nativeElement.value = '';
     this.searchInput.nativeElement.dispatchEvent(new Event('input'));
   }
-
 }
