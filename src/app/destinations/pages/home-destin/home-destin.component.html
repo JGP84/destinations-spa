@@ -20,7 +20,11 @@
       *ngFor="let destination of pageDestinations"
       class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2"
     >
-      <destinations-card [destination]="destination"></destinations-card>
+    <destinations-card
+    [destination]="destination"
+    (onGoInfo)="goInfoDestination($event)"
+    (onGoEdit)="goEditDestination($event)"
+  ></destinations-card>
     </div>
   </div>
   <mat-paginator [length]="destinations?.length" [pageSize]="8" [pageSizeOptions]="[ 8, 12, 18, 24]" (page)="setPage($event)"></mat-paginator>

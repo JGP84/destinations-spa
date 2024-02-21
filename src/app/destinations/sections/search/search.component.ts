@@ -14,6 +14,8 @@ export class SearchComponent {
     @Inject(DestinationService) private destinationService: DestinationService
   ) {}
 
+
+
   search(event: any) {
     console.log('searching for:', event.target.value);
     this.destinationService.searchDestination(event);

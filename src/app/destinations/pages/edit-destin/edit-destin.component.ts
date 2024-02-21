@@ -38,7 +38,7 @@ export class EditDestinComponent implements OnInit {
 
   updateDestination() {
     this.destinationService.updateDestination(this.destinForm.value);
-    this.router.navigate(['/home']);
+    this.goBack();
   }
 
   deleteDestination() {
@@ -55,7 +55,7 @@ export class EditDestinComponent implements OnInit {
       if (result) {
         this.destinationService.deleteDestination(id);
         this.destinForm.reset();
-        this.router.navigate(['/home']);
+        this.goBack();
       }
     });
   }

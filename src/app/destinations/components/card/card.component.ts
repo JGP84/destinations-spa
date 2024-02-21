@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Destin } from '../../interfaces/destin.interface';
 
@@ -9,14 +9,16 @@ import { Destin } from '../../interfaces/destin.interface';
 })
 export class CardComponent {
   @Input() destination!: Destin;
+  @Output() onGoInfo = new EventEmitter<Destin>();
+  @Output() onGoEdit = new EventEmitter<Destin>();
 
-  constructor( private router: Router ) {}
+  constructor(private router: Router) {}
 
   goInfoDestination(destination: Destin) {
-    this.router.navigate(['home/info/', destination.id]);
+    this.onGoInfo.emit(destination);
   }
 
   goEditDestination(destination: Destin) {
-    this.router.navigate(['home/edit/', destination.id]);
+    this.onGoEdit.emit(destination);
   }
 }

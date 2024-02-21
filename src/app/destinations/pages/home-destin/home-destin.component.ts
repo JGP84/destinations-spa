@@ -28,7 +28,11 @@ export class HomeDestinComponent implements OnInit {
       .pipe(delay(1000))
       .subscribe((destinations) => {
         this.destinations = destinations;
-        const pageEvent: PageEvent = { pageIndex: 0, pageSize: 8, length: destinations.length };
+        const pageEvent: PageEvent = {
+          pageIndex: 0,
+          pageSize: 8,
+          length: destinations.length,
+        };
         this.setPage(pageEvent);
       });
   }
@@ -38,10 +42,18 @@ export class HomeDestinComponent implements OnInit {
     let endIndex = startIndex + event.pageSize;
 
     if (this.destinations && endIndex > this.destinations.length) {
-       endIndex = this.destinations.length;
+      endIndex = this.destinations.length;
     }
 
     this.pageDestinations = this.destinations?.slice(startIndex, endIndex);
+  }
+
+  goInfoDestination(destination: Destin) {
+    this.router.navigate(['home/info/', destination.id]);
+  }
+
+  goEditDestination(destination: Destin) {
+    this.router.navigate(['home/edit/', destination.id]);
   }
 
   goNewDestination() {
@@ -51,7 +63,8 @@ export class HomeDestinComponent implements OnInit {
   reset() {
     const dialogRef = this.dialog.open(DialogComponent, {
       data: {
-        message: 'This action will retrieve the list of source destinations and any changes made will be lost. Do you wish to continue?',
+        message:
+          'This action will retrieve the list of source destinations and any changes made will be lost. Do you wish to continue?',
         labelButton: 'Reset',
       },
     });
