@@ -66,17 +66,17 @@ Para ejecutar esta aplicación con Docker, sigue estos pasos:
 
 1. **Construye la imagen de Docker**. En la raíz del proyecto, ejecuta el siguiente comando:
 
-\`\`\`bash
+```bash
 docker build -t nombre-de-tu-imagen .
-\`\`\`
+```
 
 Este comando construirá una imagen de Docker para tu aplicación utilizando el archivo `Dockerfile` en la raíz del proyecto. Puedes reemplazar `nombre-de-tu-imagen` con el nombre que quieras darle a tu imagen.
 
 2. **Ejecuta el contenedor de Docker**. Una vez que la imagen se haya construido, puedes ejecutarla con el siguiente comando:
 
-\`\`\`bash
+```bash
 docker run -p 80:80 nombre-de-tu-imagen
-\`\`\`
+```
 
 Este comando ejecutará un contenedor de Docker basado en tu imagen. La opción `-p 80:80` mapea el puerto 80 del contenedor al puerto 80 de tu máquina local.
 
