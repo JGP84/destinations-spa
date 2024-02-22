@@ -32,7 +32,10 @@
       <input matInput formControlName="src_img" />
     </mat-form-field>
 
-    <button mat-flat-button color="primary" type="submit">Update</button>
+    <button mat-flat-button color="primary" type="submit">
+      <mat-icon>update</mat-icon>
+      Update
+    </button>
     <button
       type="button"
       mat-flat-button
@@ -40,6 +43,7 @@
       color="warn"
       (click)="deleteDestination()"
     >
+      <mat-icon>delete</mat-icon>
       Delete
     </button>
   </form>
