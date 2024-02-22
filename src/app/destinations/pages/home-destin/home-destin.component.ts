@@ -25,7 +25,7 @@ export class HomeDestinComponent implements OnInit {
   ngOnInit(): void {
     this.destinationService
       .getDestinations()
-      .pipe(delay(1000))
+      .pipe(delay(1000)) // A delay of one second is added to allow the loading spinner to be visible
       .subscribe((destinations) => {
         this.destinations = destinations;
         const pageEvent: PageEvent = {
