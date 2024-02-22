@@ -36,6 +36,7 @@
   grid-auto-flow: dense;
   grid-auto-rows: 22rem;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  margin-bottom: 1rem;
 }
 
 /* Media query for screens smaller than 600px */
@@ -46,6 +47,8 @@
     grid-auto-flow: dense;
     grid-auto-rows: 28rem;
     grid-template-columns: 1fr;
+    margin-bottom: 1rem;
+
   }
 
   .destinations-cards {

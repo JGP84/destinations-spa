@@ -8,25 +8,25 @@
 - [x] Utilizar la última versión LTS de Angular, Typescript y de cualquier librería que se use en el proyecto.
 
 ## Servicio
-- [x] Crear un servicio que guarde la información de los súper héroes.
-- [x] El servicio debe permitir consultar todos los súper héroes.
-- [x] El servicio debe permitir consultar un único súper héroe por id.
-- [x] El servicio debe permitir consultar todos los súper héroes que contienen, en su nombre, el valor de un parámetro enviado en la petición.
-- [x] El servicio debe permitir modificar un súper héroe.
-- [x] El servicio debe permitir eliminar un súper héroe.
+- [x] Crear un servicio que guarde la información de los destinos.
+- [x] El servicio debe permitir consultar todos los destinos.
+- [x] El servicio debe permitir consultar un único destino por id.
+- [x] El servicio debe permitir consultar todos los destinos que contienen, en su nombre, el valor de un parámetro enviado en la petición.
+- [x] El servicio debe permitir modificar un destino.
+- [x] El servicio debe permitir eliminar un destino.
 - [x] (Opcional) Test unitario del servicio.
 
 ## Componente
 - [x] Crear un componente que utilice el servicio anterior.
-- [x] El componente debe mostrar una lista paginada de héroes con botones de añadir, editar y borrar.
-- [x] El componente debe mostrar un input para filtrar por el héroe seleccionado.
+- [x] El componente debe mostrar una lista paginada de destinos con botones de añadir, editar y borrar.
+- [x] El componente debe mostrar un input para filtrar por el destino seleccionado.
 - [x] El componente debe generar un formulario vacío al pulsar el botón de añadir.
-- [x] El componente debe generar un formulario con los datos del héroe seleccionado al pulsar el botón de edición.
-- [x] El componente debe preguntar si se está seguro que se desea borrar el héroe y, al confirmarlo, lo borrarlo.
+- [x] El componente debe generar un formulario con los datos del destino seleccionado al pulsar el botón de edición.
+- [x] El componente debe preguntar si se está seguro que se desea borrar el destino y, al confirmarlo, lo borrarlo.
 - [x] (Opcional) Test unitario del componente.
 
 ## Puntos a tener en cuenta
-- [x] La información de súper héroes se guardará dentro del servicio.
+- [x] La información de destinos se guardará dentro del servicio.
 - [x] Se valorarán las soluciones propuestas para cada punto, el modelo de datos y formato del código.
 - [x] La prueba se debe presentar en un repositorio de Git.
 
@@ -35,10 +35,9 @@
 - [x] Rutas y navegación de la página.
 - [x] Presentar la aplicación “Dockerizada”.
 - [x] Interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
-- [x] Directiva para que al crear o editar en la caja de texto del nombre del héroe, siempre se muestre en mayúscula.
+- [x] Directiva para que al crear o editar en la caja de texto del nombre del destino, siempre se muestre en mayúscula.
 - [x] Uso de mockserver para poder implementar las llamadas HTTP sin un backend.
 - [x] Comunicación entre componentes orientada a eventos.
-
 ## Se valorará positivamente
   - La construcción del modelo de datos.
 
