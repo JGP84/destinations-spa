@@ -22,6 +22,11 @@ mat-toolbar {
   margin-right: 0.2rem;
 }
 
+.icon-and-text-link {
+  display: flex;
+  align-items: center;
+}
+
 .hide-on-small {
   display: none;
   margin-left: 10px;
