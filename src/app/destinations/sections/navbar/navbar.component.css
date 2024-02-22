@@ -1,8 +1,17 @@
-.navbar {
-  justify-content: space-between;
+a{
+  text-decoration: none;
+  color: white;
 }
 
+a:hover, a:active{
+  color: lightgray;
+}
 
-span {
-  margin-right: 1rem;
+.nav-caption{
+  display: inline-block;
+  padding-left: 6px;
+}
+mat-toolbar{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
