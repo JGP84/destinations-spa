@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
 import { Destin } from '../../interfaces/destin.interface';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'; // Import FormBuilder
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,21 +12,23 @@ import { Subscription } from 'rxjs';
 })
 export class NewDestinComponent implements OnInit, OnDestroy {
   destinForm: FormGroup = new FormGroup({});
+
   formChangesSubscription: Subscription = new Subscription();
 
   constructor(
     private destinationService: DestinationService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) {}
 
   ngOnInit() {
-    this.destinForm = new FormGroup({
-      name: new FormControl('', Validators.required),
-      capital: new FormControl('', Validators.required),
-      country_code: new FormControl('', Validators.required),
-      id: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      src_img: new FormControl('', Validators.required),
+    this.destinForm = this.fb.group({ 
+      name: ['', Validators.required],
+      capital: ['', Validators.required],
+      country_code: ['', Validators.required],
+      id: ['', Validators.required],
+      description: ['', Validators.required],
+      src_img: ['', Validators.required],
     });
 
     const savedFormData = localStorage.getItem('newDestinForm');
