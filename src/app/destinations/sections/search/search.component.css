@@ -20,6 +20,7 @@
   .search-actions,
   .search-input-group {
     flex-direction: column;
+    width: 100%; /* New */
   }
 
   .search-container {
@@ -28,6 +29,10 @@
 
   .clear-button {
     margin-top: 0;
+    width: 100%;
+  }
+
+  mat-form-field { /* New */
     width: 100%;
   }
 }

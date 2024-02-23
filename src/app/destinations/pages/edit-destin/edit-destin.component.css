@@ -7,7 +7,7 @@
 }
 
 .edit-destination__title {
-  color: var(--color-title);
+  color: var(--title-color);
   margin-bottom: 20px;
 }
 
@@ -23,9 +23,20 @@ mat-form-field {
 }
 
 mat-label {
-  color: var(--color-label);
+  color: var(--label-color);
 }
 
 .edit-destination__button {
   margin-top: var(--spacing-button);
+}
+.back-button {
+  margin-bottom: 2rem;
+  color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.back-button:hover,
+.back-button:focus {
+  background-color: #FF4081;
+  color: #fff;
 }

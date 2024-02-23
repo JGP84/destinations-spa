@@ -3,10 +3,10 @@
 :root {
   /* Colors */
   --card-bg-color: #7b20a2;
-  --main-color: white;
+  --text-color: white;
   --container-bg-color: #303030;
-  --color-title: mintcream;
-  --color-label: white;
+  --title-color: mintcream;
+  --label-color: white;
 
   /* Spacing */
   --main-padding: 1rem;
@@ -15,13 +15,16 @@
   --button-margin-top: -0.2rem;
   --spacing-form-field: 1.5rem;
   --spacing-button: 2rem;
+
+    /* Border */
+  --border-radius: 10px;
 }
 
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
   background-color: mintcream;
-  color: var(--main-color);
+  color: var(--text-color, white);/* Fallback to white if --text-color is not defined */
 }
 
 html,

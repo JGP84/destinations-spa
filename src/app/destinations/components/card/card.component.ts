@@ -13,7 +13,7 @@ export class CardComponent {
   @Input() destination!: Destin;
   @Output() onGoInfo: EventEmitter<Destin> = new EventEmitter();
   @Output() onGoEdit: EventEmitter<Destin> = new EventEmitter();
-
+  public isHovering: boolean = false;
   constructor(
     private destinationService: DestinationService,
     private dialog: MatDialog

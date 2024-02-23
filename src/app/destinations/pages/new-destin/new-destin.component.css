@@ -16,7 +16,6 @@ form {
   flex-direction: column;
   width: 100%;
   max-width: 500px;
-
 }
 
 mat-form-field {
@@ -25,9 +24,17 @@ mat-form-field {
 }
 mat-label {
   color: white;
-
 }
 
-.home-button {
+.back-button {
+  margin-bottom: 2rem;
   margin-top: 2rem;
+  color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.back-button:hover,
+.back-button:focus {
+  background-color: #FF4081;
+  color: #fff;
 }

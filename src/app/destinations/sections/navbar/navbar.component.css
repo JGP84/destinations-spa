@@ -14,8 +14,8 @@ a:active {
 }
 
 mat-toolbar {
-  border-top-left-radius: 0.3125rem;
-  border-top-right-radius: 0.3125rem;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .icon-container {
@@ -55,7 +55,7 @@ mat-toolbar {
   }
 
   .hide-on-small ul {
-    flex-direction: row; 
+    flex-direction: row;
   }
 
   .show-on-small {

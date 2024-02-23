@@ -1,4 +1,9 @@
-<mat-card>
+<mat-card
+  class="card"
+  (mouseover)="isHovering = false"
+  (mouseout)="isHovering = true"
+  [ngClass]="{'dim': isHovering}"
+>
   <mat-card-header>
     <mat-card-title> {{ destination.name | uppercase }} </mat-card-title>
   </mat-card-header>

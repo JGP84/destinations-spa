@@ -32,7 +32,7 @@
       <input matInput formControlName="src_img" />
     </mat-form-field>
 
-    <button mat-flat-button color="primary" type="submit">
+    <button mat-flat-button color="accent" type="submit">
       <mat-icon>update</mat-icon>
       Update
     </button>
@@ -49,9 +49,9 @@
   </form>
 
   <button
+    class="back-button edit-destination__button"
     mat-flat-button
-    class="edit-destination__button"
-    color="accent"
+    color="primary"
     (click)="goBack()"
   >
     <mat-icon>home</mat-icon> Go Back
