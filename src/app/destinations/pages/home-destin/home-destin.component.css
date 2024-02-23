@@ -37,13 +37,14 @@
   grid-auto-rows: 22rem;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   margin-bottom: var(--main-margin-bottom);
+  min-height: 45rem;
 }
 
 .spinner-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 800px;
+  height: 50rem;
 }
 
 /* Media query for screens smaller than 600px */
