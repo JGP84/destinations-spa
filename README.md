@@ -45,6 +45,7 @@
   - Local storage, para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
   - Pipe personalizado, para truncar el número de caracteres que mostrará la tarjeta en la descripción.
   - Responsive mobile.
+  - Animaciones, para estilizar las tarjetas y botones.
 
 ***
 
