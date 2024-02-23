@@ -30,7 +30,7 @@ export class DestinationService {
 
   fetchDestinations(): Observable<Destin[]> {
     return this.http
-      .get<{ destinations: Destin[] }>('/assets/mock/db.json')
+      .get<{ destinations: Destin[] }>('./assets/mock/db.json')
       .pipe(
         map((response) => response.destinations || []), // Ensure response.destinations is always an array
         catchError((error) => {
