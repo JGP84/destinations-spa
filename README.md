@@ -1,8 +1,10 @@
 
 # Prueba técnica de angular
 
+
+[![Go to my app in live](src/assets/img/screenshot.jpg)](https://jgp84.github.io/destinations-spa/ "Go to my app in live")
+
 **[Go to my app in live](https://jgp84.github.io/destinations-spa/)**
-[![Go to my app in live](src/assets/img/screenshot.jpg "Go to my app in live")](https://jgp84.github.io/destinations-spa/)
 
 **Se ha decidido que la información que se consuma sea sobre destinos turísticos en lugar de héroes, para que esté más alineada con la empresa postulada.**
 
