@@ -1,16 +1,32 @@
 @import "~@angular/material/prebuilt-themes/purple-green.css";
 
+:root {
+  /* Colors */
+  --card-bg-color: #7b20a2;
+  --main-color: white;
+  --container-bg-color: #303030;
+  --color-title: mintcream;
+  --color-label: white;
+
+  /* Spacing */
+  --main-padding: 1rem;
+  --main-margin-bottom: 1rem;
+  --small-padding: 0.5rem;
+  --button-margin-top: -0.2rem;
+  --spacing-form-field: 1.5rem;
+  --spacing-button: 2rem;
+}
+
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   margin: 0;
   background-color: mintcream;
-  color: white;
+  color: var(--main-color);
 }
 
 html,
 body {
   height: 100%;
-
 }
 
 .spacer {

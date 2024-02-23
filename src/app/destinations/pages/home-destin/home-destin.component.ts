@@ -7,6 +7,10 @@ import { DialogComponent } from '../../components/dialog/dialog.component';
 import { delay } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
 
+const HOME_INFO_ROUTE = 'home/info/';
+const HOME_EDIT_ROUTE = 'home/edit/';
+const HOME_NEW_ROUTE = 'home/new';
+
 @Component({
   selector: 'app-home-destin',
   templateUrl: './home-destin.component.html',
@@ -26,15 +30,20 @@ export class HomeDestinComponent implements OnInit {
     this.destinationService
       .getDestinations()
       .pipe(delay(1000)) // A delay of one second is added to allow the loading spinner to be visible
-      .subscribe((destinations) => {
-        this.destinations = destinations;
-        const pageEvent: PageEvent = {
-          pageIndex: 0,
-          pageSize: 8,
-          length: destinations.length,
-        };
-        this.setPage(pageEvent);
-      });
+      .subscribe(
+        (destinations) => {
+          this.destinations = destinations;
+          const pageEvent: PageEvent = {
+            pageIndex: 0,
+            pageSize: 8,
+            length: destinations.length,
+          };
+          this.setPage(pageEvent);
+        },
+        (error) => {
+          console.error('Error fetching destinations', error);
+        }
+      );
   }
 
   setPage(event: PageEvent) {
@@ -49,15 +58,15 @@ export class HomeDestinComponent implements OnInit {
   }
 
   goInfoDestination(destination: Destin) {
-    this.router.navigate(['home/info/', destination.id]);
+    this.router.navigate([HOME_INFO_ROUTE, destination.id]);
   }
 
   goEditDestination(destination: Destin) {
-    this.router.navigate(['home/edit/', destination.id]);
+    this.router.navigate([HOME_EDIT_ROUTE, destination.id]);
   }
 
   goNewDestination() {
-    this.router.navigate(['home/new']);
+    this.router.navigate([HOME_NEW_ROUTE]);
   }
 
   reset() {

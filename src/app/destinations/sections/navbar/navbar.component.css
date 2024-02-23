@@ -10,11 +10,12 @@ a:active {
 
 .nav-caption {
   display: inline-block;
-  padding-left: 6px;
+  padding-left: 0.375rem;
 }
+
 mat-toolbar {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
 }
 
 .icon-container {
@@ -29,16 +30,34 @@ mat-toolbar {
 
 .hide-on-small {
   display: none;
-  margin-left: 10px;
 }
+
+.hide-on-small ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hide-on-small ul li {
+  margin-left: 0.625rem;
+}
+
+.active-link {
+  color: lightgray;
+}
+
 /* Media query for screens larger than 600px */
 @media (min-width: 600px) {
   .hide-on-small {
-    display: inline;
+    display: flex;
   }
-}
 
-@media (min-width: 600px) {
+  .hide-on-small ul {
+    flex-direction: row; 
+  }
+
   .show-on-small {
     display: none;
   }

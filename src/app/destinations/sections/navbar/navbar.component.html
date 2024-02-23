@@ -5,13 +5,13 @@
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>
-        <a routerLink="/home">Home</a>
+        <a routerLink="/home" routerLinkActive="active-link">Home</a>
       </button>
       <button mat-menu-item>
-        <a>About</a>
+        <a routerLink="/about" routerLinkActive="active-link">About</a>
       </button>
       <button mat-menu-item>
-        <a>Contact</a>
+        <a routerLink="/contact" routerLinkActive="active-link">Contact</a>
       </button>
     </mat-menu>
     <a routerLink="/home" class="icon-and-text-link">
@@ -23,9 +23,13 @@
 
     <span class="spacer"></span>
 
-    <a class="hide-on-small" routerLink="/home">Home</a>
-    <a class="hide-on-small" routerLink="/">About</a>
-    <a class="hide-on-small" routerLink="/">Contact</a>
+    <div class="hide-on-small">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active-link">About</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active-link">Contact</a></li>
+      </ul>
+    </div>
 
     <button mat-icon-button>
       <mat-icon>account_circle</mat-icon>

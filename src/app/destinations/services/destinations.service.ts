@@ -15,7 +15,17 @@ export class DestinationService {
   private searchDestinations: Destin[] = [];
 
   constructor(private http: HttpClient) {
-    this.fetchDestinations().subscribe();
+    this.fetchDestinations().subscribe(
+      (destinations) => {
+        this.originDestinations = [...destinations];
+        this.destinations.next(destinations);
+        this.searchDestinations = [...destinations];
+      },
+      (error) => {
+        // Handle error here
+        console.error('Error fetching destinations:', error);
+      }
+    );
   }
 
   fetchDestinations(): Observable<Destin[]> {
@@ -24,13 +34,9 @@ export class DestinationService {
       .pipe(
         map((response) => response.destinations || []), // Ensure response.destinations is always an array
         catchError((error) => {
+          // Handle error here
           console.error('Error fetching destinations:', error);
           return of([]);
-        }),
-        tap((destinations) => {
-          this.originDestinations = [...destinations];
-          this.destinations.next(destinations);
-          this.searchDestinations = [...destinations];
         })
       );
   }
@@ -73,8 +79,8 @@ export class DestinationService {
     this.searchDestinations = [newDestination, ...this.searchDestinations];
   }
 
-  searchDestination(event: any): void {
-    const inputSearch = event.target.value.toLowerCase();
+  searchDestination(event: Event): void {
+    const inputSearch = (event.target as HTMLInputElement).value.toLowerCase();
 
     const filteredDestinations = this.searchDestinations.filter(
       ({ name, id }: Destin) => {

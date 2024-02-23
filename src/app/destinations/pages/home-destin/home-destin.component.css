@@ -1,16 +1,16 @@
 .container-main {
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: var(--main-padding) 0;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  color: white;
-  margin-bottom: 1rem;
+  padding: var(--main-padding);
+  color: var(--main-color);
+  margin-bottom: var(--main-margin-bottom);
 }
 
 .button-container {
@@ -32,23 +32,25 @@
 
 .container-cards {
   display: grid;
-  gap: 1rem;
+  gap: var(--main-padding);
   grid-auto-flow: dense;
   grid-auto-rows: 22rem;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  margin-bottom: 1rem;
+  margin-bottom: var(--main-margin-bottom);
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
 }
 
 /* Media query for screens smaller than 600px */
 @media only screen and (max-width: 600px) {
   .container-cards {
-    display: grid;
-    gap: 1rem;
-    grid-auto-flow: dense;
     grid-auto-rows: 28rem;
     grid-template-columns: 1fr;
-    margin-bottom: 1rem;
-
   }
 
   .destinations-cards {
@@ -59,26 +61,13 @@
 /* Media query for screens larger than 600px */
 @media only screen and (min-width: 600px) {
   .header {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    color: white;
-    margin-bottom: 1rem;
   }
 
   .button-container {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 54.5%;
-  }
-
-  .spinner-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 800px;
   }
 }

@@ -1,33 +1,32 @@
-.flex {
+.search-container {
+  padding: var(--main-padding);
+}
+
+.search-actions,
+.search-input-group {
   display: flex;
   align-items: center;
 }
 
-.flex-beetween {
-  display: flex;
+.search-actions {
   justify-content: space-between;
-  align-items: center;
 }
 
-.pad-1 {
-  padding: 1rem;
-}
-
-button {
-  margin-top: -0.2rem;
+.clear-button {
+  margin-top: var(--button-margin-top);
 }
 
 @media only screen and (max-width: 600px) {
-  .flex,
-  .flex-beetween {
+  .search-actions,
+  .search-input-group {
     flex-direction: column;
   }
 
-  .pad-1 {
-    padding: 0.5rem;
+  .search-container {
+    padding: var(--small-padding);
   }
 
-  button {
+  .clear-button {
     margin-top: 0;
     width: 100%;
   }

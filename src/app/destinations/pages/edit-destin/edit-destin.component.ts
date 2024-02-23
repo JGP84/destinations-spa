@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 
@@ -11,21 +11,24 @@ import { DialogComponent } from '../../components/dialog/dialog.component';
   styleUrls: ['edit-destin.component.css'],
 })
 export class EditDestinComponent implements OnInit {
-  destinForm: FormGroup = new FormGroup({
-    name: new FormControl(''),
-    capital: new FormControl(''),
-    country_code: new FormControl(''),
-    id: new FormControl(''),
-    description: new FormControl(''),
-    src_img: new FormControl(''),
-  });
+  destinForm: FormGroup;
 
   constructor(
     private destinationService: DestinationService,
     private router: Router,
     private route: ActivatedRoute,
-    public dialog: MatDialog
-  ) {}
+    public dialog: MatDialog,
+    private fb: FormBuilder
+  ) {
+    this.destinForm = this.fb.group({
+      name: [''],
+      capital: [''],
+      country_code: [''],
+      id: [''],
+      description: [''],
+      src_img: [''],
+    });
+  }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');

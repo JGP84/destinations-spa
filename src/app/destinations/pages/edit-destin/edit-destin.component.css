@@ -1,4 +1,4 @@
-.container-edit {
+.edit-destination {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,8 +6,8 @@
   padding: 20px;
 }
 
-h1 {
-  color: mintcream;
+.edit-destination__title {
+  color: var(--color-title);
   margin-bottom: 20px;
 }
 
@@ -16,18 +16,16 @@ form {
   flex-direction: column;
   width: 100%;
   max-width: 500px;
-
 }
 
 mat-form-field {
-  margin-bottom: 15px;
-
+  margin-bottom: var(--spacing-form-field);
 }
+
 mat-label {
-  color: white;
-
+  color: var(--color-label);
 }
 
-.margin-button {
-  margin-top: 2rem;
+.edit-destination__button {
+  margin-top: var(--spacing-button);
 }

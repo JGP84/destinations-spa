@@ -1,5 +1,4 @@
-import { Component, Inject, ViewChild, ElementRef } from '@angular/core';
-
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { DestinationService } from '../../services/destinations.service';
 
 @Component({
@@ -10,14 +9,9 @@ import { DestinationService } from '../../services/destinations.service';
 export class SearchComponent {
   @ViewChild('searchInput') searchInput!: ElementRef;
 
-  constructor(
-    @Inject(DestinationService) private destinationService: DestinationService
-  ) {}
+  constructor(private destinationService: DestinationService) {}
 
-
-
-  search(event: any) {
-    console.log('searching for:', event.target.value);
+  search(event: Event) {
     this.destinationService.searchDestination(event);
   }
 

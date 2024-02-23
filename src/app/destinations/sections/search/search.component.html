@@ -1,18 +1,22 @@
-<div class="pad-1">
+<div class="search-container">
   <h2>Search</h2>
 
-  <div class="flex-beetween">
-    <div class="flex">
+  <div class="search-actions">
+    <div class="search-input-group">
       <mat-form-field>
         <mat-label>spain...</mat-label>
         <input matInput #searchInput (input)="search($event)" />
       </mat-form-field>
 
-      <button mat-raised-button class="mx-3" color="primary" (click)="clearSearch()">
+      <button
+        mat-raised-button
+        class="clear-button mx-3"
+        color="primary"
+        (click)="clearSearch()"
+      >
         <mat-icon>clear</mat-icon>
         Clear
       </button>
     </div>
   </div>
 </div>
-

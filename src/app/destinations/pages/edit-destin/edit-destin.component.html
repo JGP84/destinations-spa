@@ -1,5 +1,5 @@
-<div class="container-edit">
-  <h1>Edit Destination</h1>
+<div class="edit-destination">
+  <h1 class="edit-destination__title">Edit Destination</h1>
 
   <form [formGroup]="destinForm" (ngSubmit)="updateDestination()">
     <mat-form-field>
@@ -39,7 +39,7 @@
     <button
       type="button"
       mat-flat-button
-      class="margin-button"
+      class="edit-destination__button"
       color="warn"
       (click)="deleteDestination()"
     >
@@ -50,7 +50,7 @@
 
   <button
     mat-flat-button
-    class="margin-button"
+    class="edit-destination__button"
     color="accent"
     (click)="goBack()"
   >
