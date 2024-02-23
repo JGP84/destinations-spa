@@ -45,6 +45,8 @@
 - [x] Comunicación entre componentes orientada a eventos.
 ## Se valorará positivamente
   - La construcción del modelo de datos.
+  - Uso de programación reactiva.
+  - Código legible usando lambdas.
 
 ## EXTRAS (no demandado en los requerimientos)
   - Local storage, para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
