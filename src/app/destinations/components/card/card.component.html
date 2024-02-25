@@ -3,6 +3,7 @@
   (mouseover)="isHovering = false"
   (mouseout)="isHovering = true"
   [ngClass]="{'dim': isHovering}"
+  (click)="goInfoDestination(destination)"
 >
   <mat-card-header>
     <mat-card-title> {{ destination.name | uppercase }} </mat-card-title>
@@ -22,18 +23,18 @@
     <button
       mat-icon-button
       aria-label="Delete"
-      (click)="deleteDestination(destination)"
+      (click)="deleteDestination(destination); $event.stopPropagation()"
     >
       <mat-icon>delete</mat-icon>
     </button>
 
-    <button mat-button (click)="goInfoDestination(destination)">
+    <button mat-button (click)="goInfoDestination(destination); $event.stopPropagation()">
       VIEW DETAILS
     </button>
     <button
       mat-icon-button
       aria-label="Edit"
-      (click)="goEditDestination(destination)"
+      (click)="goEditDestination(destination); $event.stopPropagation()"
     >
       <mat-icon>edit</mat-icon>
     </button>
