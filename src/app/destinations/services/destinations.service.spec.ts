@@ -9,7 +9,7 @@ import { share, catchError } from 'rxjs/operators';
 import { lastValueFrom, of } from 'rxjs';
 
 import data from '../../../assets/mock/db.json';
-const mockDestinations: Destin[] = data.destinations;
+const MOCK_DESTINATIONS: Destin[] = data.destinations;
 
 const MOCK_URL = './assets/mock/db.json';
 
@@ -48,7 +48,7 @@ describe('DestinationService', () => {
 
       requests.forEach((req) => {
         expect(req.request.method).toBe('GET');
-        req.flush({ destinations: mockDestinations });
+        req.flush({ destinations: MOCK_DESTINATIONS });
       });
     });
 
@@ -83,11 +83,11 @@ describe('DestinationService', () => {
 
   describe('deleteDestination', () => {
     it('should delete a destination', async () => {
-      const destinationToDelete: Destin = mockDestinations[0];
+      const destinationToDelete: Destin = MOCK_DESTINATIONS[0];
       await service.deleteDestination(destinationToDelete.id);
 
       const req = httpMock.expectOne(MOCK_URL);
-      req.flush([mockDestinations[1]]);
+      req.flush([MOCK_DESTINATIONS[1]]);
 
       service.getDestinations().subscribe((destinations) => {
         expect(destinations).not.toContain(destinationToDelete);
@@ -98,18 +98,18 @@ describe('DestinationService', () => {
   describe('updateDestination', () => {
     it('should update a destination', async () => {
       const updatedDestination: Destin = {
-        ...mockDestinations[0],
+        ...MOCK_DESTINATIONS[0],
         name: 'Updated Destination',
       };
       await service.updateDestination(updatedDestination);
 
-      const index = mockDestinations.findIndex(
+      const index = MOCK_DESTINATIONS.findIndex(
         (d) => d.id === updatedDestination.id
       );
-      mockDestinations[index] = updatedDestination;
+      MOCK_DESTINATIONS[index] = updatedDestination;
 
       const req = httpMock.expectOne(MOCK_URL);
-      req.flush({ destinations: mockDestinations });
+      req.flush({ destinations: MOCK_DESTINATIONS });
 
       service.getDestinations().subscribe((destinations) => {
         const destination = destinations.find(
@@ -122,9 +122,9 @@ describe('DestinationService', () => {
 
   describe('getDestinationById', () => {
     it('should get a destination by id', () => {
-      const destinationToGet: Destin = mockDestinations[0];
+      const destinationToGet: Destin = MOCK_DESTINATIONS[0];
       const req = httpMock.expectOne(MOCK_URL);
-      req.flush({ destinations: mockDestinations });
+      req.flush({ destinations: MOCK_DESTINATIONS });
 
       const destination = service.getDestinationById(destinationToGet.id);
       expect(destination).toEqual(destinationToGet);
@@ -144,10 +144,10 @@ describe('DestinationService', () => {
 
       await service.addDestination(newDestination);
 
-      mockDestinations.push(newDestination);
+      MOCK_DESTINATIONS.push(newDestination);
 
       const req = httpMock.expectOne(MOCK_URL);
-      req.flush({ destinations: mockDestinations });
+      req.flush({ destinations: MOCK_DESTINATIONS });
 
       service.getDestinations().subscribe((destinations) => {
         const destination = destinations.find(

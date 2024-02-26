@@ -14,33 +14,8 @@ import { TruncatePipe } from '../../pipes/truncate.pipe';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Mock values
-const MOCK_DESTINATIONS: Destin[] = [
-  {
-    name: 'Destination 1',
-    capital: 'Capital 1',
-    country_code: 'Code 1',
-    id: '1',
-    description: '',
-    src_img: '',
-  },
-  {
-    name: 'Destination 2',
-    capital: 'Capital 2',
-    country_code: 'Code 2',
-    id: '2',
-    description: '',
-    src_img: '',
-  },
-  {
-    name: 'Destination 3',
-    capital: 'Capital 3',
-    country_code: 'Code 3',
-    id: '3',
-    description: '',
-    src_img: '',
-  },
-];
+import data from '../../../../assets/mock/db.json';
+const MOCK_DESTINATIONS: Destin[] = data.destinations;
 
 describe('HomeDestinComponent', () => {
   let component: HomeDestinComponent;
@@ -93,7 +68,7 @@ describe('HomeDestinComponent', () => {
       fixture.whenStable().then(() => {
         fixture.detectChanges();
         expect(component.destinations).toEqual(MOCK_DESTINATIONS);
-        expect(component.pageDestinations).toEqual(MOCK_DESTINATIONS.slice(0, 6));
+        expect(component.pageDestinations).toEqual(MOCK_DESTINATIONS.slice(0, 8));
         done();
       });
     });
