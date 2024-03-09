@@ -1,59 +1,62 @@
 
-# Prueba técnica de angular
-
+# Angular Technical Test
 
 [![Go to my app in live](src/assets/img/screenshot-mac.png)](https://jgp84.github.io/destinations-spa/ "Go to my app in live")
 
 **[Go to my app in live](https://jgp84.github.io/destinations-spa/)**
 
-**Se ha decidido que la información que se consuma sea sobre destinos turísticos en lugar de héroes, para que esté más alineada con la empresa postulada.**
+# Angular Technical Test
 
-# Checklist de Requerimientos
+## Requirements Checklist
 
-- [x] Utilizar la última versión LTS de Angular, Typescript y de cualquier librería que se use en el proyecto.
+### Project Setup
+- [x] Use the latest LTS version of Angular, Typescript and any library used in the project.
+- [x] The test must be presented in a Git repository.
 
-## Servicio
-- [x] Crear un servicio que guarde la información de los destinos.
-- [x] El servicio debe permitir consultar todos los destinos.
-- [x] El servicio debe permitir consultar un único destino por id.
-- [x] El servicio debe permitir consultar todos los destinos que contienen, en su nombre, el valor de un parámetro enviado en la petición.
-- [x] El servicio debe permitir modificar un destino.
-- [x] El servicio debe permitir eliminar un destino.
-- [x] (Opcional) Test unitario del servicio.
+### Service
+- [x] Create a service that stores the information of the destinations.
+- [x] The service should allow to:
+  - [x] Consult all the destinations.
+  - [x] Consult a single destination by id.
+  - [x] Consult all the destinations that contain, in their name, the value of a parameter sent in the request.
+  - [x] Modify a destination.
+  - [x] Delete a destination.
+- [x] (Optional) Unit test of the service.
 
-## Componente
-- [x] Crear un componente que utilice el servicio anterior.
-- [x] El componente debe mostrar una lista paginada de destinos con botones de añadir, editar y borrar.
-- [x] El componente debe mostrar un input para filtrar por el destino seleccionado.
-- [x] El componente debe generar un formulario vacío al pulsar el botón de añadir.
-- [x] El componente debe generar un formulario con los datos del destino seleccionado al pulsar el botón de edición.
-- [x] El componente debe preguntar si se está seguro que se desea borrar el destino y, al confirmarlo, lo borrarlo.
-- [x] (Opcional) Test unitario del componente.
+### Component
+- [x] Create a component that uses the previous service.
+- [x] The component should:
+  - [x] Display a paginated list of destinations with add, edit and delete buttons.
+  - [x] Display an input to filter by the selected destination.
+  - [x] Generate an empty form when pressing the add button.
+  - [x] Generate a form with the data of the selected destination when pressing the edit button.
+  - [x] Ask if you are sure you want to delete the destination and, upon confirmation, delete it.
+- [x] (Optional) Unit test of the component.
 
-## Puntos a tener en cuenta
-- [x] La información de destinos se guardará dentro del servicio.
-- [x] Se valorarán las soluciones propuestas para cada punto, el modelo de datos y formato del código.
-- [x] La prueba se debe presentar en un repositorio de Git.
+### Additional Considerations
+- [x] The destination information will be stored within the service.
+- [x] The proposed solutions for each point, the data model and code format will be valued.
 
-## Puntos opcionales de mejora
-- [x] Utilizar Angular Material como apoyo visual.
-- [x] Rutas y navegación de la página.
-- [x] Presentar la aplicación “Dockerizada”.
-- [x] Interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
-- [x] Directiva para que al crear o editar en la caja de texto del nombre del destino, siempre se muestre en mayúscula.
-- [x] Uso de mockserver para poder implementar las llamadas HTTP sin un backend.
-- [x] Comunicación entre componentes orientada a eventos.
-## Se valorará positivamente
-  - La construcción del modelo de datos.
-  - Uso de programación reactiva.
-  - Código legible usando lambdas.
+### Optional Improvements
+- [x] Use Angular Material as visual support.
+- [x] Implement routes and navigation of the page.
+- [x] Dockerize the application.
+- [x] Implement an interceptor to show a "loading" element while an operation such as "deletion" or "edition" is being performed.
+- [x] Implement a directive so that when creating or editing in the text box of the destination name, it always appears in uppercase.
+- [x] Use of mockserver to implement HTTP calls without a backend.
+- [x] Implement event-oriented component communication.
 
-## EXTRAS (no demandado en los requerimientos)
-  - Local storage, para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
-  - Pipe personalizado, para truncar el número de caracteres que mostrará la tarjeta en la descripción.
-  - Responsive mobile.
-  - Animaciones, para estilizar las tarjetas y botones.
-  - Deploy de la aplicación en Github Pages.
+### Positively Valued
+- [x] The construction of the data model.
+- [x] Use of reactive programming.
+- [x] Readable code using lambdas.
+
+### Extras (Not Required)
+- [x] Implement local storage, to save and retrieve form data in case of browser reload.
+- [x] Implement a custom pipe, to truncate the number of characters that the card will display in the description.
+- [x] Make the application responsive for mobile.
+- [x] Implement animations, to stylize the cards and buttons.
+- [x] Deploy the application on Github Pages.
 
 ***
 
