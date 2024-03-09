@@ -8,52 +8,56 @@
 
 **Se ha decidido que la información que se consuma sea sobre destinos turísticos en lugar de héroes, para que esté más alineada con la empresa postulada.**
 
-# Checklist de Requerimientos
+## Lista de Verificación de Requerimientos
 
+### Configuración del Proyecto
 - [x] Utilizar la última versión LTS de Angular, Typescript y de cualquier librería que se use en el proyecto.
-
-## Servicio
-- [x] Crear un servicio que guarde la información de los destinos.
-- [x] El servicio debe permitir consultar todos los destinos.
-- [x] El servicio debe permitir consultar un único destino por id.
-- [x] El servicio debe permitir consultar todos los destinos que contienen, en su nombre, el valor de un parámetro enviado en la petición.
-- [x] El servicio debe permitir modificar un destino.
-- [x] El servicio debe permitir eliminar un destino.
-- [x] (Opcional) Test unitario del servicio.
-
-## Componente
-- [x] Crear un componente que utilice el servicio anterior.
-- [x] El componente debe mostrar una lista paginada de destinos con botones de añadir, editar y borrar.
-- [x] El componente debe mostrar un input para filtrar por el destino seleccionado.
-- [x] El componente debe generar un formulario vacío al pulsar el botón de añadir.
-- [x] El componente debe generar un formulario con los datos del destino seleccionado al pulsar el botón de edición.
-- [x] El componente debe preguntar si se está seguro que se desea borrar el destino y, al confirmarlo, lo borrarlo.
-- [x] (Opcional) Test unitario del componente.
-
-## Puntos a tener en cuenta
-- [x] La información de destinos se guardará dentro del servicio.
-- [x] Se valorarán las soluciones propuestas para cada punto, el modelo de datos y formato del código.
 - [x] La prueba se debe presentar en un repositorio de Git.
 
-## Puntos opcionales de mejora
-- [x] Utilizar Angular Material como apoyo visual.
-- [x] Rutas y navegación de la página.
-- [x] Presentar la aplicación “Dockerizada”.
-- [x] Interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
-- [x] Directiva para que al crear o editar en la caja de texto del nombre del destino, siempre se muestre en mayúscula.
-- [x] Uso de mockserver para poder implementar las llamadas HTTP sin un backend.
-- [x] Comunicación entre componentes orientada a eventos.
-## Se valorará positivamente
-  - La construcción del modelo de datos.
-  - Uso de programación reactiva.
-  - Código legible usando lambdas.
+### Servicio
+- [x] Crear un servicio que guarde la información de los destinos.
+- [x] El servicio debe permitir:
+  - [x] Consultar todos los destinos.
+  - [x] Consultar un único destino por id.
+  - [x] Consultar todos los destinos que contienen, en su nombre, el valor de un parámetro enviado en la petición.
+  - [x] Modificar un destino.
+  - [x] Eliminar un destino.
+- [x] (Opcional) Test unitario del servicio.
 
-## EXTRAS (no demandado en los requerimientos)
-  - Local storage, para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
-  - Pipe personalizado, para truncar el número de caracteres que mostrará la tarjeta en la descripción.
-  - Responsive mobile.
-  - Animaciones, para estilizar las tarjetas y botones.
-  - Deploy de la aplicación en Github Pages.
+### Componente
+- [x] Crear un componente que utilice el servicio anterior.
+- [x] El componente debe:
+  - [x] Mostrar una lista paginada de destinos con botones de añadir, editar y borrar.
+  - [x] Mostrar un input para filtrar por el destino seleccionado.
+  - [x] Generar un formulario vacío al pulsar el botón de añadir.
+  - [x] Generar un formulario con los datos del destino seleccionado al pulsar el botón de edición.
+  - [x] Preguntar si se está seguro que se desea borrar el destino y, al confirmarlo, lo borrarlo.
+- [x] (Opcional) Test unitario del componente.
+
+### Consideraciones Adicionales
+- [x] La información de destinos se guardará dentro del servicio.
+- [x] Se valorarán las soluciones propuestas para cada punto, el modelo de datos y formato del código.
+
+### Mejoras Opcionales
+- [x] Utilizar Angular Material como apoyo visual.
+- [x] Implementar rutas y navegación de la página.
+- [x] Dockerizar la aplicación.
+- [x] Implementar un interceptor para mostrar un elemento “loading” mientras se realiza alguna operación como “borrado” o “edición”.
+- [x] Implementar una directiva para que al crear o editar en la caja de texto del nombre del destino, siempre se muestre en mayúscula.
+- [x] Uso de mockserver para poder implementar las llamadas HTTP sin un backend.
+- [x] Implementar comunicación entre componentes orientada a eventos.
+
+### Valoración Positiva
+- [x] La construcción del modelo de datos.
+- [x] Uso de programación reactiva.
+- [x] Código legible usando lambdas.
+
+### Extras (No Requeridos)
+- [x] Implementar local storage, para guardar y recuperar los datos de los formularios en caso de recarga del navegador.
+- [x] Implementar un pipe personalizado, para truncar el número de caracteres que mostrará la tarjeta en la descripción.
+- [x] Hacer la aplicación responsive para móviles.
+- [x] Implementar animaciones, para estilizar las tarjetas y botones.
+- [x] Desplegar la aplicación en Github Pages.
 
 ***
 
